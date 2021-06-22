@@ -1,0 +1,136 @@
+@import "default.css";
+.itemWrapper {
+  width: 100%;
+  margin: 8rem auto;
+  display: flex;
+}
+.itemWrapper .itemImg {
+  width: 50%;
+}
+.itemWrapper .itemImg .img_MainWrapper {
+  width: 100%;
+}
+.itemWrapper .itemImg .img_MainWrapper .img_Main {
+  margin: 0 auto;
+  width: 80%;
+  padding-top: 96%;
+  background: center url(/shopImg/Item1/Item1_1.jpg) no-repeat;
+  background-size: cover;
+  transition: all 0.5s;
+}
+.itemWrapper .itemImg .img_MainWrapper .img_Main:hover {
+  filter: brightness(0.8);
+}
+.itemWrapper .itemImg .img_Row {
+  margin: 2rem auto;
+  width: 80%;
+  display: flex;
+}
+.itemWrapper .itemImg .img_Row .img_BottomWrapper {
+  padding: 0 0.5rem;
+  flex: 1;
+}
+.itemWrapper .itemImg .img_Row .img_BottomWrapper .img_Bottom {
+  margin: 0 auto;
+  width: 100%;
+  padding-top: 120%;
+  background: center url(/shopImg/Item1/Item1_3.jpg) no-repeat;
+  background-size: cover;
+  transition: all 0.5s;
+}
+.itemWrapper .itemImg .img_Row .img_BottomWrapper .img_Bottom:hover {
+  filter: brightness(0.8);
+}
+.itemWrapper .itemInform {
+  width: 50%;
+}
+.itemWrapper .itemInform .item_Title {
+  width: 100%;
+  font-size: 4rem;
+  border-bottom: 1px solid #000;
+}
+.itemWrapper .itemInform .item_IntroText {
+  margin-top: 3rem;
+  font-size: 2rem;
+  line-height: 2;
+}
+.itemWrapper .itemInform .itemInform_Bottom {
+  display: flex;
+  margin-top: 5rem;
+}
+.itemWrapper .itemInform .itemInform_Bottom .informL {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  width: 40%;
+}
+.itemWrapper .itemInform .itemInform_Bottom .informL ul {
+  margin: 0;
+  padding: 0;
+  padding-right: 2rem;
+}
+.itemWrapper .itemInform .itemInform_Bottom .informL ul li {
+  color: #C4C4C4;
+  margin-bottom: 1rem;
+}
+.itemWrapper .itemInform .itemInform_Bottom .informL a {
+  background-color: #C4C4C4;
+  color: #ffffff;
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.5rem;
+  width: 40%;
+  font-size: 2rem;
+  border: 1px solid #C4C4C4;
+  text-align: center;
+  transition: all 0.5s;
+}
+.itemWrapper .itemInform .itemInform_Bottom .informL a:hover {
+  background-color: #747474;
+  color: #fff;
+}
+.itemWrapper .itemInform .itemInform_Bottom .informR {
+  width: 60%;
+  font-size: 2rem;
+}
+.itemWrapper .itemInform .itemInform_Bottom .informR .informRTitle {
+  font-weight: 700;
+  width: 80%;
+  border-bottom: 1px solid #000;
+  margin-bottom: 2rem;
+}
+.itemWrapper .itemInform .itemInform_Bottom .informR .item_Size label {
+  margin-right: 1rem;
+}
+.itemWrapper .itemInform .itemInform_Bottom .informR .priceNumber {
+  font-size: 4rem;
+}
+.itemWrapper .itemInform .itemInform_Bottom .informR .item_Checkout {
+  padding: 2rem 3rem;
+  display: flex;
+  justify-content: flex-end;
+}
+.itemWrapper .itemInform .itemInform_Bottom .informR .item_Checkout button {
+  background-color: #fff;
+  display: inline-block;
+  margin-top: 2rem;
+  margin-right: 2rem;
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: 1px solid #000;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.itemWrapper .itemInform .itemInform_Bottom .informR .item_Checkout button:nth-child(2) {
+  background-color: #575757;
+  color: #fff;
+}
+.itemWrapper .itemInform .itemInform_Bottom .informR .item_Checkout button:hover {
+  background-color: #000;
+  color: #fff;
+}
+.itemWrapper .itemInform .itemInform_Bottom .informR .item_Number,
+.itemWrapper .itemInform .itemInform_Bottom .informR .item_Price,
+.itemWrapper .itemInform .itemInform_Bottom .informR .item_Checkout {
+  margin-top: 5rem;
+}

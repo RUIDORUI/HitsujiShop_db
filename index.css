@@ -1,0 +1,74 @@
+@import "default.css";
+.container .goods_Content {
+  width: 100%;
+}
+.container .goods_Row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.container .goods_Wrapper {
+  flex: 1;
+}
+.container .goods_Wrapper .goods_Box {
+  font-size: 2rem;
+  margin: 2rem;
+}
+.container .goods_Wrapper .goods_Box .goods_Img {
+  width: 100%;
+  padding-top: 120%;
+  background: center url(/shopImg/Item1/Item1_1.jpg) no-repeat;
+  background-size: cover;
+  transition: all 0.5s;
+}
+.container .goods_Wrapper .goods_Box .goods_Img:hover {
+  filter: brightness(0.8);
+}
+.container .goods_Wrapper .goods_Box .goods_Title {
+  margin-top: 2rem;
+}
+.container .goods_Wrapper .goods_Box .goods_Button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  margin-top: 2rem;
+  border-bottom: 1px solid #000;
+}
+.container .goods_Wrapper .goods_Box .goods_Button button {
+  padding: 0;
+  background-color: #fff;
+}
+.container .goods_Wrapper .goods_Box .goods_Button .goods_ButtonL {
+  height: 3rem;
+  line-height: 3rem;
+  width: 40%;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  border: 1px solid #000;
+  border-bottom: 0;
+  border-right: 0;
+  transition: all 0.5s;
+}
+.container .goods_Wrapper .goods_Box .goods_Button .goods_ButtonL:hover {
+  background-color: #000;
+}
+.container .goods_Wrapper .goods_Box .goods_Button .goods_ButtonL:hover a {
+  color: #fff;
+}
+.container .goods_Wrapper .goods_Box .goods_Button .goods_ButtonR {
+  height: 3rem;
+  width: 20%;
+  border: 1px solid #000;
+  border-bottom: 0;
+  transition: all 0.5s;
+}
+.container .goods_Wrapper .goods_Box .goods_Button .goods_ButtonR:hover {
+  background-color: #000;
+}
+.container .goods_Wrapper .goods_Box .goods_Button .goods_ButtonR:hover a {
+  color: #fff;
+}
+.container .goods_Wrapper .goods_Box .goods_Button .goods_ButtonR:hover svg {
+  fill: #fff;
+}
