@@ -68,14 +68,17 @@ function showSignIn() {
                 <h4>Please Fill Informations Below</h4>
 
                 <div class="signInInput_Wrapper">
+                    <div class='input_Error' id="signInName_Error">This Account Name is not exist</div>
                     <div class="signInInput_Field">
                         <h4>Account Name：</h4>
                         <input type="text" name="signIn_Account" id="signIn_Account" placeholder="Enter Your Name">
+                        
                     </div>
                     <div class="signInInput_Field">
                         <h4>Password：</h4>
                         <input type="password" name="signIn_Password" id="signIn_Password" placeholder="Enter Your Password">
                         <i class="bi bi-eye-fill" id="toggle_Signin"></i>
+                        <div class='input_Error' id="signInPassword_Error">Wrong Password</div>
                     </div>
                     <button class="signIn_Button" id="signin_Submit" type="submit">Confirm</button>
                     <a href="" class="signIn_Button" id="signIn_Forget">Forget Password?</a>

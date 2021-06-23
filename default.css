@@ -223,7 +223,7 @@ h5 {
   border: 1px solid #000;
   padding: 2rem;
   margin: 0 auto;
-  transform: translateY(15%);
+  margin-top: 20vh;
   display: none;
 }
 .container #signIn_Section #signIn_Form h1,
@@ -316,4 +316,20 @@ h5 {
 }
 .container #signIn_Section #signIn_Form .signIn_Create #signIn_CreateLink {
   text-decoration: underline;
+}
+.container #signIn_Section #signIn_Success {
+  W: 70%;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  padding: 2rem;
+}
+.container #signIn_Section #signIn_Success h1 {
+  text-align: center;
+}
+.container .input_Error {
+  margin: 0 auto;
+  text-align: center;
+  display: none;
+  font-size: 1.8rem;
+  color: #ee0a21;
 }

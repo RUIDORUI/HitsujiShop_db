@@ -61,6 +61,7 @@
         }
 
         function signIn() {
+            $('.input_Error').fadeOut('slow');
             $.ajax({
                 type: 'post',
                 url: 'http://hitsujishop_test.com:6080/php/sign.php?do=signIn',
@@ -77,14 +78,33 @@
                                 $(this).remove();
 
                             });
-                            $('#signInForm_Wrapper').html(`<h1>${accountName}<h1>`);
-                            console.log('123form');
+                            $('#signInForm_Wrapper').html(
+                                `<div id='signIn_Success'>
+                                    <h1>
+                                        Welecome Back<br>
+                                        ${accountName}.
+                                    </h1>
+                                </div>`);
+                            $('#signIn_Success').fadeIn(3000, function() {
+                                $('#signInForm_Wrapper').fadeOut(1000, function() {
+                                    window.location.href = 'http://hitsujishop_test.com:6080/hitsuji.html';
+                                });
+                                console.log('123');
+                            });
+                            // document.location.href = 'http://google.com';
                             break;
                         case 'name_False':
+                            $('.input_Error').fadeOut('slow');
+                            $('#signInPassword_Error').fadeOut('slow');
+                            $('#signInPassword_Error').fadeIn('slow');
                             console.log(result);
                             break;
                         case 'false':
+                            $('.input_Error').fadeOut('slow');
+                            $('#signInName_Error').fadeOut('slow');
+                            $('#signInName_Error').fadeIn('slow');
                             console.log(result);
+
                             break;
 
                         default:
