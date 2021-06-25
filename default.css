@@ -1,4 +1,15 @@
 @import "normalize.css";
+@keyframes show {
+  0% {
+    right: -200px;
+  }
+  50% {
+    right: -100px;
+  }
+  100% {
+    right: 0px;
+  }
+}
 :root {
   font-size: 10px;
 }
@@ -318,7 +329,7 @@ h5 {
   text-decoration: underline;
 }
 .container #signIn_Section #signIn_Success {
-  W: 70%;
+  width: 70%;
   border-top: 1px solid #000;
   border-bottom: 1px solid #000;
   padding: 2rem;

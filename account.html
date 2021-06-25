@@ -5,20 +5,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn</title>
 
-    <link rel="stylesheet" href="/signup.css">
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css' integrity='sha512-vZWT27aGmde93huNyIV/K7YsydxaafHLynlJa/4aPy28/R1a/IxewUH4MWo7As5I33hpQ7JS24kwqy/ciIFgvg==' crossorigin='anonymous' />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css' integrity='sha512-vZWT27aGmde93huNyIV/K7YsydxaafHLynlJa/4aPy28/R1a/IxewUh3MWo7As5I33hpQ7JS24kwqy/ciIFgvg==' crossorigin='anonymous' />
     <!-- jQuery JS 3.1.0 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="/common.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <title>signup</title>
+    <link rel="stylesheet" href="/signin.css">
+
+    <script src="/common.js"></script>
     <script>
+        function toRvisePage() {
+            $.ajax({
+                type: 'POST',
+                url: 'http://hitsujishop_test.com:6080/php/revise.php',
+                success: function(data) {
+                    $('.accountInfor_Section').children().remove();
+                    $('.accountInfor_Section').html(data);
+                    pwsVisible('#input_RevisePassword', '#toggle_Revise');
+
+                    $('html, body').animate({
+                        scrollTop: $("#revise_Form").offset().top
+                    }, 2000);
+                },
+                error: function(xhr) {
+                    alert(xhr);
+                }
+
+            })
+
+
+        }
+
         function checkPassword() {
             console.log($('#input_SignupPassword').val());
             console.log($('#input_ConfirmPass').val());
 
-            if ($('#input_SignupPassword').val() != $('#input_ConfirmPass').val()) {
+            if ($('#revise_SignupPassword').val() != $('#revise_ConfirmPass').val()) {
                 $('#password_Error').fadeOut();
                 $('#password_Error').fadeIn();
                 // check = false;
@@ -35,22 +58,19 @@
 
             $.ajax({
                 type: 'POST',
-                url: ('http://hitsujishop_test.com:6080/php/checkAccount.php?do=create'),
+                url: ('http://hitsujishop_test.com:6080/php/checkAccount.php?do=update'),
                 dataType: 'html',
                 data: {
                     input_AccountName: $('#input_AccountName').val()
                 },
                 success: function(data) {
-                    if (data == 'false') {
+                    if (data == 'true' || data == $('#input_AccountName').val()) {
+                        $('#name_Error').fadeOut();
+                        update();
+                    } else {
                         $('#name_Error').fadeOut();
                         $('#name_Error').fadeIn();
-                        console.log('account_F');
-
-                    } else if (data == 'true') {
-                        $('#name_Error').fadeOut();
-                        create();
-
-
+                        console.log(data);
                     }
 
                 },
@@ -60,83 +80,22 @@
             });
         }
 
-        function signIn() {
-            $('.input_Error').fadeOut('slow');
-            $.ajax({
-                type: 'post',
-                url: 'http://hitsujishop_test.com:6080/php/sign.php?do=signIn',
-                dataType: 'html',
-                data: $('#signIn_Form').serialize(),
-                success: function(data) {
-                    let response = JSON.parse(data);
-                    let accountName = response.accountName;
-                    let result = response.result;
-                    let session = response.session;
-
-                    switch (result) {
-                        case 'true':
-                            $('#signIn_Form').fadeOut('slow', function() {
-                                $(this).remove();
-
-                            });
-                            $('#signInForm_Wrapper').html(
-                                `<div id='signIn_Success'>
-                                    <h1>
-                                        Welecome Back<br>
-                                        ${accountName}.
-                                    </h1>
-                                </div>`);
-                            $('#signIn_Success').fadeIn(3000, function() {
-                                $('#signInForm_Wrapper').fadeOut(1000, function() {
-                                    // window.location.href = 'http://hitsujishop_test.com:6080/hitsuji.html';
-                                });
-                                console.log('123');
-                            });
-                            // document.location.href = 'http://google.com';
-                            break;
-                        case 'name_False':
-                            $('.input_Error').fadeOut('slow');
-                            $('#signInPassword_Error').fadeOut('slow');
-                            $('#signInPassword_Error').fadeIn('slow');
-                            console.log(result);
-                            break;
-                        case 'false':
-                            $('.input_Error').fadeOut('slow');
-                            $('#signInName_Error').fadeOut('slow');
-                            $('#signInName_Error').fadeIn('slow');
-                            console.log(result);
-
-                            break;
-
-                        default:
-                            console.log('555');
-                            break;
-                    }
-                    console.log(accountName);
-                    console.log(response);
-                },
-                error: function(xhr) {
-                    alert(xhr.status);
-                }
-            })
-        }
-
-
-
-        function create() {
+        function update() {
 
             if (checkPassword()) {
                 $.ajax({
                     type: 'POST',
-                    url: 'http://hitsujishop_test.com:6080/php/sign.php?do=create',
+                    url: 'http://hitsujishop_test.com:6080/php/sign.php?do=update',
                     dataType: 'html',
-                    data: $('#signup_Form').serialize(),
+                    data: $('#revise_Form').serialize(),
                     success: function(data) {
+                        console.log(data);
+
                         $('.footer').after('<div id="signIn_Section"><div id="signInForm_Wrapper"></div></div>');
                         $('#signInForm_Wrapper').html(
                             `<div id='signIn_Success'>
                             <h1>
-                               Sign up Successfully.
+                               Update Succseefully.
                             </h1>
                         </div>`);
                         $('#signIn_Success').fadeIn(3000, function() {
@@ -146,7 +105,6 @@
                             });
                             console.log('123');
                         });
-                        console.log(data);
                     },
                     error: function(xhr) {
                         alert(xhr.status);
@@ -160,21 +118,30 @@
 
             }
         }
-
-
         $(function() {
             pageOut();
             checkSignIn();
-            // pwsVisible(document.getElementById('input_SignupPassword'), document.getElementById('toggle_Signup'));
-            pwsVisible('#input_SignupPassword', '#toggle_Signup');
-            // pwsVisible('#signIn_Password', '#toggle_Signin');
+
+
+
+            $.ajax({
+                type: 'GET',
+                dataType: 'html',
+                url: 'http://hitsujishop_test.com:6080/php/showAccount.php',
+                success: function(data) {
+                    $('.accountInfor_Section').html(data);
+                },
+                error: function(xhr) {
+                    alert(xhr);
+                }
+            })
+
 
         })
     </script>
 </head>
 
 <body>
-
     <div class="container">
         <div class="banner_Wrapper">
             <div class="banner">
@@ -219,64 +186,68 @@
 
         </div>
 
-        <div class="signup_Section">
+        <div class='accountInfor_Section'>
 
-            <form method="POST" class="signup_Form" id="signup_Form" action="javascript:checkAccount()">
+            <!-- <form method='POST' class="revise_Form" id="revise_Form" action="javascript:revise()">
                 <h1>Registration</h1>
-                <div class="signup_Field">
+                <div class='revise_Field'>
 
-                    <div class="inputWrapper">
-                        <h4 class="sign_FormTitle">Account Name：</h4>
-                        <input class="signup_Input" type="text" name="input_AccountName" id="input_AccountName" placeholder="Enter Your Name" value="" required>
-                        <div class='input_Error' id="name_Error">Accountname has been used</div>
+                    <div class='inputWrapper'>
+                        <h4 class='revise_FormTitle'>Account Name：</h4>
+                        <input class='revise_Input' type='text' name='input_AccountName' id='input_AccountName' placeholder='Enter Your Name' value='' required>
+                        <div class='input_Error' id='name_Error'>Accountname has been used</div>
                     </div>
-                    <div class="inputWrapper">
-                        <h4 class="sign_FormTitle">Password：</h4>
-                        <input class="signup_Input" type="password" name="input_Password" id="input_SignupPassword" placeholder="Enter Your Password" value="" required>
-                        <i class="bi bi-eye-fill" id="toggle_Signup"></i>
+                    <div class='inputWrapper'>
+                        <h4 class='sign_FormTitle'>Password：</h4>
+                        <input class='revise_Input' type='password' name='input_Password' id='input_RevisePassword' placeholder='Enter Your Password' value='' required>
+                        <i class='bi bi-eye-fill' id='toggle_Revise'></i>
                         <div class='input_Error' id="password_Error">Your Password doesn't match Confirm Password</div>
                     </div>
-                    <div class="inputWrapper">
-                        <h4 class="sign_FormTitle">Confirm Password：</h4>
-                        <input class="signup_Input" type="password" name="input_ConfirmPass" id="input_ConfirmPass" placeholder="Confirm Your Password " value="" required>
+                    <div class='inputWrapper'>
+                        <h4 class='sign_FormTitle'>Confirm Password：</h4>
+                        <input class='revise_Input' type='password' name='input_ConfirmPass' id='input_ConfirmPass' placeholder='Confirm Your Password' value="" required>
                     </div>
-                    <div class="inputWrapper">
-                        <h4 class="sign_FormTitle">Gender</h4>
-                        <div class="checkboxWrapper">
-                            <label for="input_Male">
-                                Male 
-                                <input type="radio" name="input_Gender" id="input_Male" value="M">
+                    <div class='inputWrapper'>
+                        <h4 class='sign_FormTitle'>Gender</h4>
+                        <div class='checkboxWrapper'>
+                            <label for="input_Male">Male
+                            <input type='radio' name='input_Gender' id='input_Male' value='M'>
                             </label>
-                            <label for="input_Female">
+                            <label for='input_Female'>
                                 Female 
-                                <input type="radio" name="input_Gender" id="input_Female" value="F">
+                                <input type='radio' name='input_Gender' id='input_Female' value='F'>
                             </label>
 
                         </div>
 
                     </div>
-                    <div class="inputWrapper">
-                        <h4 class="sign_FormTitle">E-mail：</h4>
-                        <input class="signup_Input" type="email" name="input_Email" id="input_Email" placeholder="Enter Email" value="" required>
+                    <div class='inputWrapper'>
+                        <h4 class='sign_FormTitle'>E-mail：</h4>
+                        <input class='revise_Input' type='email' name='input_Email' id='input_Email' placeholder='Enter Email' value='' required>
                     </div>
-                    <div class="inputWrapper">
-                        <h4 class="sign_FormTitle">Phone Number：</h4>
-                        <input class="signup_Input" type="number" name="input_Phone" id="input_Phone" placeholder="Enter Phone Number" value="" required>
+                    <div class='inputWrapper'>
+                        <h4 class='sign_FormTitle'>Phone Number：</h4>
+                        <input class='revise_Input' type='number' name='input_Phone' id='input_Phone' placeholder='Enter Phone Number' value='' required>
                     </div>
-                    <div class="inputWrapper">
-                        <h4 class="sign_FormTitle">Address：</h4>
-                        <input class="signup_Input" type="text" name="input_Address" id="input_Address" placeholder="Enter Address" value="" required>
+                    <div class='inputWrapper'>
+                        <h4 class='sign_FormTitle'>Address：</h4>
+                        <input class='revise_Input' type='text' name='input_Address' id='input_Address' placeholder='Enter Address' value='' required>
                     </div>
-                    <button id="signup_Submit" type="submit">Confirm</button>
+                     <button id='revise_Reset' type='submit'>Reset</button>
+                    <button id='revise_Submit' type='submit'>Confirm Revise</button>
 
 
-                </div>
-            </form>
+                </div> 
+            </form>-->
+
+
+
+
+
+
         </div>
 
-
-
-        <div id="popo" class="footer">
+        <div class="footer">
             <div class="footer_Contact">
                 Contact：
                 <div class="iconWrapper">
@@ -291,39 +262,13 @@
             </div>
             <div class="footer_Copy">Copyright © 2021 Hitsujibungaku.</div>
         </div>
-
-        <!-- <div id="signIn_Section">
-            <form action="" id="signIn_Form">
-                <h1>Sign In</h1>
-                <h4>Please Fill Informations Below</h4>
-
-                <div class="signInInput_Wrapper">
-                    <div class="signInInput_Field">
-                        <h4>Account Name：</h4>
-                        <input type="text" name="signIn_Account" id="signIn_Account" placeholder="Enter Your Name">
-                    </div>
-                    <div class="signInInput_Field">
-                        <h4>Password：</h4>
-                        <input type="password" name="signIn_Password" id="signIn_Password" placeholder="Enter Your Password">
-                        <i class="bi bi-eye-fill" id="toggle_Signin"></i>
-                    </div>
-                    <button class="signIn_Button" id="signin_Submit" type="submit">Confirm</button>
-                    <a href="" class="signIn_Button" id="signIn_Forget">Forget Password?</a>
-                </div>
-                <div class="signIn_Create">
-                    <h4>Don't Have a Account? <a href="" id="signIn_CreatLink">Create One.</a></h4>
-                </div>
-
-            </form>
-
-        </div> -->
     </div>
 
 
 
 
+
+
 </body>
-
-
 
 </html>

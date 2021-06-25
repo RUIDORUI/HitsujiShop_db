@@ -25,6 +25,24 @@ switch ($_GET['do']) {
         break;
 
     case 'update':
+        session_start();
+        $oldName = $_SESSION['accountName'];
+        $new_Name = $_REQUEST['input_AccountName'];
+        $new_Password = $_REQUEST['input_Password'];
+        $new_Gender = $_REQUEST['input_Gender'];
+        $new_Email = $_REQUEST['input_Email'];
+        $new_Phone = $_REQUEST['input_Phone'];
+        $new_Address = $_REQUEST['input_Address'];
+
+        $sql = "UPDATE `account` SET`name` = '{$new_Name}',`password` = '{$new_Password}',`gender` = '{$new_Gender}',`email` = '{$new_Email}',`phone` = '{$new_Phone}',`address` = '{$new_Address}'WHERE`name` = '{$oldName}'";
+        
+
+        $result = mysqli_query($connect, $sql);
+        
+        echo $result;
+        // mysqli_free_result($result);
+        //資料庫離線
+        mysqli_close($connect);
 
         break;
     case 'delete':
@@ -49,8 +67,12 @@ switch ($_GET['do']) {
             break;
         }
         while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
+            session_start();
+            $_SESSION['accountName'] = $input_Name;
+            $_SESSION['signed'] = 'true';
             if ($row[0] == $input_Name && $row[1] == $input_Password) {
-                $response = array('accountName' => "{$input_Name}", 'result' => 'true');
+                $response = array('accountName' => "{$input_Name}", 'result' => 'true','session'=>$_SESSION['accountName'],'signed'=>$_SESSION['signed']);
+
                 echo json_encode($response);
 
             } else if ($row[0] == $input_Name && $row[1] !== $input_Password) {
@@ -66,6 +88,14 @@ switch ($_GET['do']) {
         mysqli_close($connect);
 
         break;
+    case 'logOut':
+        session_start();
+        unset($_SESSION['accountName']);
+        unset($_SESSION['signed']);
+        echo 'Log Out';
+        
+        break;
+        
     default:
         # code...
         break;

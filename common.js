@@ -1,3 +1,11 @@
+function pageOut() {
+    $(window).bind('unload', function() {
+        $("body").hide();
+        $("body").fadeOut(1000);
+    });
+
+}
+
 function pwsVisible(i, t) {
     const togglePassword = document.querySelector(t);
     const inputPassword = document.querySelector(i);
@@ -12,7 +20,40 @@ function pwsVisible(i, t) {
     });
 }
 
+function checkSignIn() {
+    $.ajax({
+        type: 'POST',
+        url: 'http://hitsujishop_test.com:6080/php/checkSignIn.php',
+        success: function(data) {
+            if (data == 'true') {
+                $('.logo').after(` 
+                <div class='nav_Menu'>
+                    <a href='http://hitsujishop_test.com:6080/hitsuji.html' class='navMenu_Link' id='goods_Link'>Goods</a>
+                    <a href='http://hitsujishop_test.com:6080/account.html' class='navMenu_Link' id='account_Link'>Account</a>
+                    <a href='' class='navMenu_Link' id='order_Link'>Order</a>
+                    <a href='' class='navMenu_Link' id='faq_Link'>FAQ</a>
+                    <a href='###' class='navMenu_Link' id='logout_Link' onclick='logOut()'>Log out</a>
+                </div>`);
+            } else {
+                $('.logo').after(` 
+                <div class='nav_Menu'>
+                    <a href='http://hitsujishop_test.com:6080/hitsuji.html' class='navMenu_Link' id='goods_Link'>Goods</a>
+                    <a href='###'' class='navMenu_Link' id='signup_Link' onclick='showSignIn()'>SignIn/Up</a>
+                   
+                    <a href='' class='navMenu_Link' id='faq_Link'>FAQ</a>
+                </div>`);
+            }
+            console.log(data);
+        },
+        error: function(xhr) {
+            alert(xhr.status);
+        }
+
+    })
+}
+
 function signIn() {
+    $('.input_Error').fadeOut('slow');
     $.ajax({
         type: 'post',
         url: 'http://hitsujishop_test.com:6080/php/sign.php?do=signIn',
@@ -22,6 +63,7 @@ function signIn() {
             let response = JSON.parse(data);
             let accountName = response.accountName;
             let result = response.result;
+            let session = response.session;
 
             switch (result) {
                 case 'true':
@@ -29,14 +71,33 @@ function signIn() {
                         $(this).remove();
 
                     });
-                    $('#signInForm_Wrapper').html(`<h1>${accountName}<h1>`);
-                    console.log('123form');
+                    $('#signInForm_Wrapper').html(
+                        `<div id='signIn_Success'>
+                            <h1>
+                                Welecome Back<br>
+                                ${accountName}.
+                            </h1>
+                        </div>`);
+                    $('#signIn_Success').fadeIn(3000, function() {
+                        $('#signInForm_Wrapper').fadeOut(1000, function() {
+                            window.location.href = 'http://hitsujishop_test.com:6080/hitsuji.html';
+                        });
+                        console.log('123');
+                    });
+                    // document.location.href = 'http://google.com';
                     break;
                 case 'name_False':
+                    $('.input_Error').fadeOut('slow');
+                    $('#signInPassword_Error').fadeOut('slow');
+                    $('#signInPassword_Error').fadeIn('slow');
                     console.log(result);
                     break;
                 case 'false':
+                    $('.input_Error').fadeOut('slow');
+                    $('#signInName_Error').fadeOut('slow');
+                    $('#signInName_Error').fadeIn('slow');
                     console.log(result);
+
                     break;
 
                 default:
@@ -103,4 +164,18 @@ function showSignIn() {
 
         }
     });
+}
+
+function logOut() {
+    $.ajax({
+        type: 'GET',
+        url: 'http://hitsujishop_test.com:6080/php/sign.php?do=logOut',
+        success: function(data) {
+            console.log(data);
+            window.location.href = 'http://hitsujishop_test.com:6080/hitsuji.html';
+        },
+        error: function(xhr) {
+            alert(xhr);
+        }
+    })
 }

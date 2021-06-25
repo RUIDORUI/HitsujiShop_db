@@ -1,101 +1,82 @@
 @import "default.css";
-@keyframes show {
-    0% {
-        right: -200px;
-    }
-    50% {
-        right: -100px;
-    }
-    100% {
-        right: 0px;
-    }
-}
-
 .signup_Section {
-    position: relative;
-    width: 100%;
-    margin-top: 2rem;
-    animation: show 0.3s linear;
+  position: relative;
+  width: 100%;
+  margin-top: 2rem;
+  animation: show 0.3s linear;
 }
-
 .signup_Section .signup_Form {
-    width: 72.86245353%;
-    margin: 0 auto;
-    border: 1px solid #000;
-    text-align: center;
+  width: 72.86245353%;
+  margin: 0 auto;
+  border: 1px solid #000;
+  text-align: center;
 }
-
 .signup_Section .signup_Form h1 {
-    margin: 2rem;
-    border-bottom: 2px solid #000;
+  margin: 2rem;
+  border-bottom: 2px solid #000;
 }
-
 .signup_Section .signup_Form .signup_Field {
-    box-sizing: border-box;
-    width: 80%;
-    margin: 0 auto;
-    padding: 2rem;
+  box-sizing: border-box;
+  width: 80%;
+  margin: 0 auto;
+  padding: 2rem;
 }
-
 .signup_Section .signup_Form .signup_Field h4 {
-    text-align: left;
-    margin: 1rem 0;
-    width: 100%;
+  text-align: left;
+  margin: 1rem 0;
+  width: 100%;
 }
-
 .signup_Section .signup_Form .signup_Field .inputWrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: flex-start;
-    position: relative;
-    margin: 3rem auto;
-    width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  position: relative;
+  margin: 3rem auto;
+  width: 60%;
 }
-
 .signup_Section .signup_Form .signup_Field .signup_Input {
-    font-size: 1.8rem;
-    position: relative;
-    text-align: left;
-    height: 3rem;
-    margin-left: 0;
-    width: 100%;
+  font-size: 1.8rem;
+  position: relative;
+  text-align: left;
+  height: 3rem;
+  margin-left: 0;
+  width: 100%;
 }
-
 .signup_Section .signup_Form .signup_Field .checkboxWrapper {
-    font-size: 2rem;
+  font-size: 2rem;
 }
-
 .signup_Section .signup_Form .signup_Field .checkboxWrapper input#input_Male {
-    margin-right: 2rem;
+  margin-right: 2rem;
 }
-
 .signup_Section .signup_Form .signup_Field .checkboxWrapper input:first-child {
-    margin-right: 2rem;
+  margin-right: 2rem;
 }
-
 .signup_Section .signup_Form .signup_Field #signup_Submit {
-    font-size: 2rem;
-    font-weight: 700;
-    background-color: #fff;
-    color: #000;
-    border: 3px solid #000;
-    padding: 1rem 10rem;
-    cursor: pointer;
-    margin-bottom: 5rem;
-    transition: all 0.5s;
+  font-size: 2rem;
+  font-weight: 700;
+  background-color: #fff;
+  color: #000;
+  border: 3px solid #000;
+  padding: 1rem 10rem;
+  cursor: pointer;
+  margin-bottom: 5rem;
+  transition: all 0.5s;
 }
-
 .signup_Section .signup_Form .signup_Field #signup_Submit:hover {
-    background-color: #000;
-    color: #fff;
+  background-color: #000;
+  color: #fff;
 }
-
+.signup_Section .signup_Form .input_Error {
+  display: none;
+  font-size: 1.8rem;
+  color: #ee0a21;
+}
 .signup_Section .signup_Form i {
-    position: relative;
-    font-size: 2rem;
-    padding: 0.5rem;
-    align-self: flex-end;
-    bottom: 3.5rem;
-    cursor: pointer;
+  position: relative;
+  font-size: 2rem;
+  padding: 0.5rem;
+  align-self: flex-end;
+  bottom: 3.5rem;
+  cursor: pointer;
 }
