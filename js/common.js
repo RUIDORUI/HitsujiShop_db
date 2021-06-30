@@ -179,3 +179,21 @@ function logOut() {
         }
     })
 }
+
+function showSuccessWindow(text, href) {
+    $('.footer').after('<div id="signIn_Section"><div id="signInForm_Wrapper"></div></div>');
+    $('#signInForm_Wrapper').html(
+        `<div id='signIn_Success'>
+        <h1>
+          ${text}
+        </h1>
+    </div>`);
+    $('#signIn_Success').fadeIn(3000, function() {
+        $('#signInForm_Wrapper').fadeIn();
+        $('#signInForm_Wrapper').fadeOut(1500, function() {
+            window.location.href = `${href}`;
+        });
+        console.log('123');
+    });
+
+}

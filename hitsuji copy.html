@@ -5,20 +5,110 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SignIn</title>
+    <title>HitsihiShop_Test</title>
+    <link rel="stylesheet" href="/css/index.css">
+
 
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css' integrity='sha512-vZWT27aGmde93huNyIV/K7YsydxaafHLynlJa/4aPy28/R1a/IxewUH4MWo7As5I33hpQ7JS24kwqy/ciIFgvg==' crossorigin='anonymous' />
     <!-- jQuery JS 3.1.0 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="/signin.css">
+    <script src="/js/common.js"></script>
+    <script src="/js/lightbox.js"></script>
+    <script>
+        $(function() {
+            pageOut();
+            checkSignIn();
+
+
+            $.ajax({
+                type: 'POST',
+                url: 'http://hitsujishop_test.com:6080/php/hitsuji.php',
+                dataType: 'html',
+                success: function(data) {
+                    $('.goods_Content').html(data);
+
+
+                },
+                error: function(xhr) {
+                    alert(xhr);
+                }
+            })
+            $('body').on('click', '.goods_Link,.goods_ButtonL', function() {
+
+                let goods_Id = $(this).data('goodsid');
+                // goods_Id = 10;
+                // console.log(10);
+                // $('.goods_Menu').fadeOut();
+                // $('.goods_Content').children().fadeOut();
+
+                $.ajax({
+                    type: 'POST',
+                    url: `http://hitsujishop_test.com:6080/php/item.php?good=${goods_Id}`,
+                    dataType: 'html',
+                    success: function(data) {
+
+                        $('head').append('<link rel="stylesheet" href="/css/item.css">');
+                        $('head').append('<link rel="stylesheet" href="/css/lightboxshow.css">');
+                        $('head').append('<script src="/js/lightbox.js">');
+
+
+
+                        $('.goods_Content').children().remove();
+                        $('.goods_Content').html(data);
+                        $('.goods_Content').children().fadeIn('slow');
+                        $('html, body').animate({
+                            scrollTop: $("#item").offset().top
+                        }, 1000);
+                        $('body').on('mouseover', '.img_Bottom', function() {
+                            let newImg = $(this).css('background');
+                            $('.img_Main').css({
+                                'background': newImg
+                            });
+
+                        });
+
+                        $('.img_Main').mousemove(function(e) {
+                            let amountMovedX = ((e.pageX - $(this).offset().left) * -2);
+                            let amountMovedY = ((e.pageY - $(this).offset().top) * -2);
+                            $(this).css({
+                                'background-size': '300%',
+                                'background-position': amountMovedX + 'px ' + amountMovedY + 'px',
+                                'transition': 'all 0s'
+
+                            });
+
+                            $(this).text(amountMovedX + 'px ,' + amountMovedY + 'px');
+                        });
+
+                        $('.img_Main').mouseleave(function() {
+                            $(this).css({
+                                'background-size': '100%',
+                                'background-position': 'center',
+                                'transition': 'all .5s'
+                                    // 'transition': 'background-position 0s'
+                            });
+                            console.log('123');
+                        });
+
+
+
+                    },
+                    error: function(xhr) {
+                        alert(xhr.status);
+                    }
+                })
+
+            });
+
+        })
+    </script>
 </head>
 
 <body>
     <div class="container">
         <div class="banner_Wrapper">
             <div class="banner">
-                <h1 id="hitsuji">羊文學</h1>
+                <h1>羊文學</h1>
                 <h1>Official shop</h1>
                 <div class="banner_Promote">
                     <div class="promote_ImageWrapper">
@@ -55,20 +145,21 @@
                 <div class="logo_Text">Hitsujibungagu Official shop</div>
 
             </div>
-            <div class="nav_Menu">
-                <a href="" class="goods">Goods</a>
-                <a href="" class="login">Login</a>
-                <a href="" class="signup">signup/Up</a>
-                <a href="" class="faq">FAQ</a>
-            </div>
+
+        </div>
+        <div class="goods_Menu">
+            <a href="" class="new">New!!</a>
+            <a href="" class="clothes">Clothes</a>
+            <a href="" class="lifestyle">Lifestyle</a>
+            <a href="" class="record">Records</a>
+        </div>
+
+        <div class="goods_Content">
+
 
         </div>
 
-
-
-
-
-        <div id="popo" class="footer">
+        <div class="footer">
             <div class="footer_Contact">
                 Contact：
                 <div class="iconWrapper">
@@ -83,7 +174,10 @@
             </div>
             <div class="footer_Copy">Copyright © 2021 Hitsujibungaku.</div>
         </div>
+
     </div>
+
+
 </body>
 
 </html>

@@ -24,11 +24,9 @@
                 padding-top: 96%;
                 background: center url(/shopImg/Item1/Item1_1.jpg) no-repeat;
                 background-size: cover;
-                transition: all .5s;
+                transition: all .1s;
 
-                &:hover {
-                    filter: brightness(.8);
-                }
+
             }
 
 
@@ -39,11 +37,12 @@
             margin: 2rem auto;
             width: 80%;
             display: flex;
+            justify-content: flex-start;
 
             .img_BottomWrapper {
                 // width: 100%;
                 padding: 0 .5rem;
-                flex: 1;
+                width: 20%;
 
                 .img_Bottom {
                     margin: 0 auto;
@@ -51,7 +50,7 @@
                     padding-top: 120%;
                     background: center url(/shopImg/Item1/Item1_3.jpg) no-repeat;
                     background-size: cover;
-                    transition: all .5s;
+                    transition: filter .5s;
 
                     &:hover {
                         filter: brightness(.8);

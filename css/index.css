@@ -4,11 +4,12 @@
 }
 .container .goods_Row {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
+  flex-wrap: wrap;
 }
 .container .goods_Wrapper {
-  flex: 1;
+  width: 25%;
 }
 .container .goods_Wrapper .goods_Box {
   font-size: 2rem;

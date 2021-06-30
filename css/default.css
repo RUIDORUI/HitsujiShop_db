@@ -224,17 +224,27 @@ h5 {
   position: fixed;
   top: 0;
   left: 0;
+  right: 0;
+  bottom: 0;
   width: 100%;
-  height: 100%;
   background-color: rgba(255, 255, 255, 0.5);
 }
 .container #signIn_Section #signInForm_Wrapper {
+  position: absolute;
   width: 30%;
   background-color: #fff;
   border: 1px solid #000;
   padding: 2rem;
   margin: 0 auto;
-  margin-top: 20vh;
+  margin-top: 50vh;
+  display: none;
+  overflow-y: scroll;
+  max-height: 100%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+}
+.container #signIn_Section #signInForm_Wrapper::-webkit-scrollbar {
   display: none;
 }
 .container #signIn_Section #signIn_Form h1,
@@ -330,8 +340,10 @@ h5 {
 }
 .container #signIn_Section #signIn_Success {
   width: 70%;
+  height: 100%;
+  margin: 0 auto;
   border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
+  border-bottom: 2px solid #000;
   padding: 2rem;
 }
 .container #signIn_Section #signIn_Success h1 {

@@ -11,9 +11,9 @@
     <!-- jQuery JS 3.1.0 -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="/signin.css">
+    <link rel="stylesheet" href="/css/signin.css">
 
-    <script src="/common.js"></script>
+    <script src="/js/common.js"></script>
     <script>
         function toRvisePage() {
             $.ajax({
@@ -91,20 +91,7 @@
                     success: function(data) {
                         console.log(data);
 
-                        $('.footer').after('<div id="signIn_Section"><div id="signInForm_Wrapper"></div></div>');
-                        $('#signInForm_Wrapper').html(
-                            `<div id='signIn_Success'>
-                            <h1>
-                               Update Succseefully.
-                            </h1>
-                        </div>`);
-                        $('#signIn_Success').fadeIn(3000, function() {
-                            $('#signInForm_Wrapper').fadeIn();
-                            $('#signInForm_Wrapper').fadeOut(1000, function() {
-                                window.location.href = 'http://hitsujishop_test.com:6080/hitsuji.html';
-                            });
-                            console.log('123');
-                        });
+                        showSuccessWindow('Revise Successfully', 'http://hitsujishop_test.com:6080/account.html');
                     },
                     error: function(xhr) {
                         alert(xhr.status);
