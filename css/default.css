@@ -1,0 +1,401 @@
+@import "normalize.css";
+@keyframes show {
+  0% {
+    right: -200px;
+  }
+  50% {
+    right: -100px;
+  }
+  100% {
+    right: 0px;
+  }
+}
+@keyframes cart {
+  0% {
+    top: 88vh;
+  }
+  100% {
+    top: 80vh;
+  }
+}
+:root {
+  font-size: 10px;
+}
+html {
+  font-family: 'Medium', 'Times New Roman', Times, serif;
+  font-weight: 400;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+@font-face {
+  font-family: 'Medium';
+  src: url('GenWanMin-M.ttc') format("truetype");
+}
+a {
+  text-decoration: none;
+  color: #000;
+}
+h1 {
+  font-size: 5rem;
+  margin: 0;
+  line-height: 1.5;
+}
+h2 {
+  font-size: 4rem;
+}
+h3 {
+  font-size: 3rem;
+}
+h4 {
+  font-size: 2rem;
+}
+h5 {
+  font-size: 1.8rem;
+}
+@keyframes zoom {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.container {
+  margin: 0 auto;
+  width: 75%;
+}
+.container .banner_Wrapper {
+  position: relative;
+  width: 100%;
+  height: 40vh;
+  background: radial-gradient(circle, rgba(204, 204, 204, 0.356), rgba(255, 255, 255, 0)), no-repeat url(/shopImg/banner4.jpg) center, #313131;
+  background-size: 70%;
+  background-attachment: scroll;
+  background-position: right 0 top 0%;
+}
+.container .banner_Wrapper .banner {
+  color: #fff;
+}
+.container .banner_Wrapper .banner h1:first-child {
+  font-size: 8rem;
+  padding-top: 2rem;
+}
+.container .banner_Wrapper .banner h1 {
+  padding-left: 4rem;
+  margin: 0;
+}
+.container .banner_Wrapper .banner_Promote {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding-left: 4rem;
+  padding-bottom: 2rem;
+  padding-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background: linear-gradient(90deg, #313131 0%, rgba(226, 226, 226, 0.03405112) 100%);
+}
+.container .banner_Wrapper .banner_Promote .promote_ImageWrapper {
+  width: 10rem;
+  height: 10rem;
+}
+.container .banner_Wrapper .banner_Promote .promote_Img {
+  display: block;
+  width: 100%;
+  padding-top: 100%;
+  background: center url(/shopImg/disco/al_01.jpg) no-repeat;
+  background-size: cover;
+  animation: zoom 0.5s ease;
+}
+.container .banner_Wrapper .banner_Promote .promote_TextWrapper {
+  height: 10rem;
+  display: flex;
+  align-items: flex-end;
+}
+.container .banner_Wrapper .banner_Promote .promote_TextWrapper .promote_Text {
+  margin-left: 3rem;
+  font-size: 3rem;
+  padding-bottom: 1rem;
+}
+.container .banner_Wrapper:hover .promote_ImageWrapper {
+  animation: zoom 1s ease;
+}
+.container .navBar {
+  margin-top: 5rem;
+  padding: 1rem 0;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container .navBar .logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.container .navBar .logo .logo_Icon {
+  width: 5rem;
+  height: 5rem;
+}
+.container .navBar .logo .logo_Text {
+  padding-left: 1rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+.container .navBar .nav_Menu {
+  font-size: 3rem;
+}
+.container .navBar .nav_Menu a {
+  position: relative;
+  padding: 1rem 1rem 0.1rem 1rem;
+  border-right: 1px solid #000;
+  transition: all 0.5s;
+  flex: 1;
+}
+.container .navBar .nav_Menu a::before {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  -webkit-transition: width 0.35s cubic-bezier(0.65, 0, 0.35, 1);
+  transition: width 0.35s cubic-bezier(0.65, 0, 0.35, 1);
+  border-bottom: 1px solid #000;
+  width: 0;
+  height: 1px;
+  content: "";
+}
+.container .navBar .nav_Menu a:hover::before {
+  background-color: #000000;
+  width: 100%;
+}
+.container .goods_Menu {
+  margin: 2rem 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container .goods_Menu a {
+  font-size: 2rem;
+  position: relative;
+  padding: 0rem 1rem 0.1rem 1rem;
+  border-right: 1px solid #000;
+  transition: all 0.5s;
+}
+.container .goods_Menu a::before {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  -webkit-transition: width 0.35s cubic-bezier(0.65, 0, 0.35, 1);
+  transition: width 0.35s cubic-bezier(0.65, 0, 0.35, 1);
+  border-bottom: 1px solid #000;
+  width: 0;
+  height: 1px;
+  content: "";
+}
+.container .goods_Menu a:hover::before {
+  background-color: #000000;
+  width: 100%;
+}
+.container .footer {
+  box-sizing: border-box;
+  font-size: 1.5rem;
+  width: 100%;
+  margin: 6rem 0rem;
+  padding: 1rem 2rem;
+  border-top: 0.5px solid #000;
+  border-bottom: 0.5px solid #000;
+}
+.container .footer .footer_Contact {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.container .footer .iconWrapper {
+  font-size: 2rem;
+  margin: 0 1rem;
+}
+.container #signIn_Section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.container #signIn_Section #signInForm_Wrapper {
+  position: absolute;
+  width: 30%;
+  background-color: #fff;
+  border: 1px solid #000;
+  padding: 2rem;
+  margin: 0 auto;
+  margin-top: 50vh;
+  display: none;
+  overflow-y: scroll;
+  max-height: 100%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+}
+.container #signIn_Section #signInForm_Wrapper::-webkit-scrollbar {
+  display: none;
+}
+.container #signIn_Section #signIn_Form h1,
+.container #signIn_Section #signIn_Form h4 {
+  text-align: center;
+}
+.container #signIn_Section #signIn_Form h1 {
+  border-bottom: 1px solid #000;
+}
+.container #signIn_Section #signIn_Form h4 {
+  font-weight: 400;
+  width: 70%;
+  margin: 2rem auto;
+}
+.container #signIn_Section #signIn_Form .signInInput_Wrapper {
+  margin-top: 5rem;
+}
+.container #signIn_Section #signIn_Form .signInInput_Field {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+}
+.container #signIn_Section #signIn_Form .signInInput_Field h4 {
+  width: 70%;
+  margin-bottom: 1rem;
+  text-align: left;
+  font-weight: 700;
+}
+.container #signIn_Section #signIn_Form .signInInput_Field input {
+  width: 70%;
+  margin: 0 auto;
+  font-size: 1.8rem;
+  height: 3rem;
+}
+.container #signIn_Section #signIn_Form .signInInput_Field i {
+  position: relative;
+  font-size: 2rem;
+  padding: 0.5rem;
+  align-self: flex-end;
+  bottom: 3.5rem;
+  right: 15%;
+  cursor: pointer;
+}
+.container #signIn_Section #signIn_Form #signin_Submit {
+  display: block;
+  box-sizing: border-box;
+  font-size: 2rem;
+  font-weight: 700;
+  background-color: #fff;
+  color: #000;
+  border: 3px solid #000;
+  width: 50%;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin: 4rem auto;
+  transition: all 0.5s;
+}
+.container #signIn_Section #signIn_Form #signin_Submit:hover {
+  background-color: #000;
+  color: #fff;
+}
+.container #signIn_Section #signIn_Form #signIn_Forget {
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #868686;
+  text-align: center;
+  transition: all 0.5s;
+  border-bottom: 1px solid #000;
+}
+.container #signIn_Section #signIn_Form #signIn_Forget:hover {
+  color: #000;
+}
+.container #signIn_Section #signIn_Form .signIn_Create {
+  margin: 5rem auto;
+  color: #868686;
+}
+.container #signIn_Section #signIn_Form .signIn_Create h4,
+.container #signIn_Section #signIn_Form .signIn_Create a {
+  font-size: 1.8rem;
+}
+.container #signIn_Section #signIn_Form .signIn_Create a {
+  color: #000;
+}
+.container #signIn_Section #signIn_Form .signIn_Create #signIn_CreateLink {
+  text-decoration: underline;
+}
+.container #signIn_Section #signIn_Success {
+  width: 70%;
+  height: 100%;
+  margin: 0 auto;
+  border-top: 1px solid #000;
+  border-bottom: 2px solid #000;
+  padding: 2rem;
+}
+.container #signIn_Section #signIn_Success h1 {
+  text-align: center;
+}
+.container .input_Error {
+  margin: 0 auto;
+  text-align: center;
+  display: none;
+  font-size: 1.8rem;
+  color: #ee0a21;
+}
+.cartWrapper {
+  position: fixed;
+  left: 87.5%;
+  top: 80vh;
+  width: 6rem;
+  box-sizing: border-box;
+  background-color: #000;
+  color: #fff;
+}
+.cartWrapper svg {
+  box-sizing: border-box;
+  padding: 1.2rem;
+  fill: #fff;
+}
+.cartWrapper p {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1.8rem;
+}
+.cartWrapper p:nth-child(2) {
+  width: 100%;
+  height: 5rem;
+  line-height: 5rem;
+  border-bottom: 2px solid #fff;
+}
+.cartWrapper p:nth-child(3) {
+  width: 100%;
+  height: 30px;
+  padding-bottom: 0.5rem 0;
+  line-height: 30px;
+}
+.cart_Animate {
+  animation: cart 1.5s ease-in-out;
+}

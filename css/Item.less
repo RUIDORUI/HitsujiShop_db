@@ -1,0 +1,193 @@
+@import "default.css";
+
+@DefaultH1: 5rem;
+@DefaultH2: 4rem;
+@DefaultH3: 3rem;
+@DefaultH4: 2rem;
+@DefaultH5: 1.8rem;
+
+.itemWrapper {
+    width: 100%;
+    margin: 8rem auto;
+    display: flex;
+
+    .itemImg {
+        width: 50%;
+
+        .img_MainWrapper {
+            width: 100%;
+            // padding: 0 3rem;
+
+            .img_Main {
+                margin: 0 auto;
+                width: 80%;
+                padding-top: 96%;
+                background: center url(/shopImg/Item1/Item1_1.jpg) no-repeat;
+                background-size: cover;
+                transition: all .1s;
+
+
+            }
+
+
+
+        }
+
+        .img_Row {
+            margin: 2rem auto;
+            width: 80%;
+            display: flex;
+            justify-content: flex-start;
+
+            .img_BottomWrapper {
+                // width: 100%;
+                padding: 0 .5rem;
+                width: 20%;
+
+                .img_Bottom {
+                    margin: 0 auto;
+                    width: 100%;
+                    padding-top: 120%;
+                    background: center url(/shopImg/Item1/Item1_3.jpg) no-repeat;
+                    background-size: cover;
+                    transition: filter .5s;
+
+                    &:hover {
+                        filter: brightness(.8);
+                    }
+
+                }
+            }
+        }
+    }
+
+    .itemInform {
+        width: 50%;
+
+        .item_Title {
+            width: 100%;
+            font-size: @DefaultH2;
+            border-bottom: 1px solid #000;
+        }
+
+        .item_IntroText {
+            margin-top: 3rem;
+            font-size: @DefaultH4;
+            line-height: 2;
+
+        }
+
+        .itemInform_Bottom {
+            display: flex;
+            margin-top: 5rem;
+            ;
+
+            .informL {
+                font-size: 1.4rem;
+                line-height: 1.5;
+                width: 40%;
+
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    padding-right: 2rem;
+
+                    li {
+                        color: #C4C4C4;
+                        margin-bottom: 1rem;
+                    }
+                }
+
+                a {
+                    background-color: #C4C4C4;
+                    color: #ffffff;
+                    display: inline-block;
+                    margin-top: 2rem;
+                    padding: .5rem;
+                    width: 40%;
+                    font-size: @DefaultH4;
+                    border: 1px solid #C4C4C4;
+                    text-align: center;
+
+                    transition: all .5s;
+
+                    &:hover {
+                        background-color: #747474;
+
+
+                        color: #fff;
+
+
+
+
+                    }
+                }
+
+            }
+
+            .informR {
+                width: 60%;
+                font-size: @DefaultH4;
+
+                .informRTitle {
+                    font-weight: 700;
+                    width: 80%;
+                    border-bottom: 1px solid #000;
+                    margin-bottom: 2rem;
+                }
+
+                .item_Size label {
+                    margin-right: 1rem;
+                }
+
+                .priceNumber {
+                    font-size: @DefaultH2;
+                }
+
+                .item_Checkout {
+                    padding: 2rem 3rem;
+                    display: flex;
+                    justify-content: flex-end;
+
+                    button {
+                        // width: 40%;
+                        background-color: #fff;
+                        display: inline-block;
+                        margin-top: 2rem;
+                        margin-right: 2rem;
+                        padding: .5rem;
+                        // width: 40%;
+                        font-size: @DefaultH4;
+                        border: 1px solid #000;
+                        text-align: center;
+                        cursor: pointer;
+
+                        transition: all .5s;
+
+                        &:nth-child(2) {
+                            background-color: rgb(87, 87, 87);
+                            color: #fff;
+                        }
+
+                        &:hover {
+                            background-color: #000;
+
+
+                            color: #fff;
+
+
+
+
+                        }
+                    }
+                }
+
+                .item_Number,
+                .item_Price,
+                .item_Checkout {
+                    margin-top: 5rem;
+                }
+            }
+        }
+    }
+}

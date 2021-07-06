@@ -1,0 +1,90 @@
+@import 'default.css';
+.order_Section {
+  margin: 4rem;
+}
+.order_Section .table_Title {
+  margin: 0 auto;
+}
+.order_Section .tableWrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+.order_Section .tableWrapper .table_Title {
+  width: 50%;
+  margin: 2rem 0rem;
+  border-bottom: 2px solid #000;
+}
+.order_Section .tableWrapper table {
+  font-size: 2rem;
+  border-spacing: 0px;
+}
+.order_Section .tableWrapper table .table_Header {
+  background-color: #000;
+  color: #fff;
+  font-weight: 400;
+  padding: 1rem 3rem;
+  border: 0.5px solid #303030;
+  border-right: 0;
+}
+.order_Section .tableWrapper table .table_Header:last-child {
+  border-right: 0.5px solid #303030;
+}
+.order_Section .tableWrapper table .table_Data {
+  text-align: center;
+  padding: 1rem 3rem;
+  border: 0.5px solid #303030;
+  border-right: 0;
+}
+.order_Section .tableWrapper table .table_Data:last-child {
+  border-right: 0.5px solid #303030;
+}
+.order_Section .tableWrapper table .table_Data img {
+  display: block;
+  width: 10rem;
+  margin: 1rem auto;
+}
+.order_Section .tableWrapper table .table_Data_Row:hover {
+  background-color: #f5f5f5;
+}
+.order_Section .tableWrapper table .table_Data_Row .delete_Cart {
+  border: 0;
+  background-color: transparent;
+  color: #ee0a21;
+  cursor: pointer;
+  transition: 0.5s all;
+}
+.order_Section .tableWrapper table .table_Data_Row .delete_Cart:hover {
+  color: #a32e2e;
+  text-decoration: underline;
+}
+.order_Section tfoot {
+  margin-top: 2rem;
+}
+.order_Section .checkoutSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.order_Section .total_Title {
+  padding: 2rem;
+  font-size: 3rem;
+  text-align: right;
+  border-top: 5px double #000;
+}
+.order_Section .checkout_Button {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  font-size: 2rem;
+  text-align: center;
+  cursor: pointer;
+  background-color: #000;
+  border: 0;
+  color: #fff;
+  transition: 0.5s all;
+}
+.order_Section .checkout_Button:hover {
+  border: 1px solid #000;
+  background-color: #fff;
+  color: #000;
+}

@@ -1,0 +1,121 @@
+@import 'default.css';
+@DefaultH1: 5rem;
+@DefaultH2: 4rem;
+@DefaultH3: 3rem;
+@DefaultH4: 2rem;
+@DefaultH5: 1.8rem;
+
+.order_Section {
+
+    margin: 4rem;
+
+    .table_Title {
+        margin: 0 auto;
+    }
+
+    .tableWrapper {
+        width: 90%;
+        margin: 0 auto;
+
+        .table_Title {
+            width: 50%;
+            margin: 2rem 0rem;
+            border-bottom: 2px solid #000;
+        }
+
+        table {
+            font-size: @DefaultH4;
+            border-spacing: 0px;
+
+            // margin: 0 auto;
+            .table_Header {
+                background-color: #000;
+                color: #fff;
+                font-weight: 400;
+                padding: 1rem 3rem;
+                border: .5px solid rgb(48, 48, 48);
+                border-right: 0;
+
+                &:last-child {
+                    border-right: .5px solid rgb(48, 48, 48);
+                }
+            }
+
+            .table_Data {
+                text-align: center;
+                padding: 1rem 3rem;
+                border: .5px solid rgb(48, 48, 48);
+                border-right: 0;
+
+                &:last-child {
+                    border-right: .5px solid rgb(48, 48, 48);
+                }
+
+                img {
+                    display: block;
+                    width: 10rem;
+                    margin: 1rem auto;
+
+                }
+            }
+
+            .table_Data_Row {
+                &:hover {
+                    background-color: rgb(245, 245, 245);
+                }
+
+                .delete_Cart {
+                    border: 0;
+                    background-color: transparent;
+                    color: #ee0a21;
+                    cursor: pointer;
+                    transition: 0.5s all;
+
+                    &:hover {
+                        color: rgb(163, 46, 46);
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    tfoot {
+        margin-top: 2rem;
+    }
+
+    .checkoutSection {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .total_Title {
+        padding: 2rem;
+        font-size: @DefaultH3;
+        text-align: right;
+        border-top: 5px double #000;
+
+    }
+
+    .checkout_Button {
+        display: block;
+        width: 100%;
+        padding: 1rem;
+        font-size: @DefaultH4;
+        text-align: center;
+        cursor: pointer;
+        background-color: #000;
+        border: 0;
+        color: #fff;
+        transition: .5s all;
+
+        &:hover {
+            border: 1px solid #000;
+            background-color: #fff;
+            color: #000;
+        }
+    }
+}

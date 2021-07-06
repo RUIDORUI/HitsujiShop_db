@@ -1,0 +1,181 @@
+@import "default.css";
+.accountInfor_Section {
+  position: relative;
+  width: 100%;
+  margin-top: 2rem;
+  animation: show 0.3s linear;
+}
+.accountInfor_Field {
+  position: relative;
+  width: 60%;
+  margin: 0 auto;
+  border: 1px solid #000;
+}
+.accountInfor_Field h1 {
+  margin: 2rem;
+  text-align: center;
+  border-bottom: 2px solid #000;
+}
+.accountInfor_Field .inforWrapper {
+  position: relative;
+  margin: 3rem auto;
+  width: 60%;
+}
+.accountInfor_Field ul {
+  display: block;
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-top: 5rem;
+  padding-left: 20%;
+  padding-right: 10%;
+}
+.accountInfor_Field li {
+  display: block;
+  text-align: left;
+  margin: 3rem auto;
+  width: 100%;
+  font-size: 3rem;
+}
+.accountInfor_Field li span {
+  display: inline-block;
+  box-sizing: border-box;
+}
+.accountInfor_Field li span:nth-child(1) {
+  width: 40%;
+}
+.accountInfor_Field li span:nth-child(2) {
+  width: 50%;
+}
+.accountInfor_Field li p {
+  padding-left: 5rem;
+  margin: 0;
+  margin-top: 1rem;
+}
+.accountInfor_Field h3 {
+  text-align: left;
+  margin: 1rem 0;
+  width: 100%;
+}
+.accountInfor_Field h3:nth-child(2) {
+  text-indent: 8rem;
+}
+.accountInfor_Field .inforBtnWrapper {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.accountInfor_Field button {
+  font-size: 2rem;
+  font-weight: 700;
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #000;
+  padding: 1rem;
+  cursor: pointer;
+  margin: 5rem 3rem;
+  transition: all 0.5s;
+}
+.accountInfor_Field button:hover {
+  background-color: #000;
+  color: #fff;
+}
+.accountInfor_Field button:nth-child(1) {
+  margin-left: 0;
+  border: 0;
+  background-color: #7a7a7a;
+  color: #fff;
+}
+.revise_Form {
+  width: 72.86245353%;
+  margin: 0 auto;
+  border: 1px solid #000;
+  text-align: center;
+}
+.revise_Form h1 {
+  margin: 2rem;
+  border-bottom: 2px solid #000;
+}
+.revise_Form .revise_Field {
+  box-sizing: border-box;
+  width: 80%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.revise_Form .revise_Field h4 {
+  text-align: left;
+  margin: 1rem 0;
+  width: 100%;
+}
+.revise_Form .revise_Field .inputWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  position: relative;
+  margin: 3rem auto;
+  width: 60%;
+}
+.revise_Form .revise_Field .revise_Input {
+  font-size: 1.8rem;
+  position: relative;
+  text-align: left;
+  height: 3rem;
+  margin-left: 0;
+  width: 100%;
+}
+.revise_Form .revise_Field .checkboxWrapper {
+  font-size: 2rem;
+}
+.revise_Form .revise_Field .checkboxWrapper input#input_Male {
+  margin-right: 2rem;
+}
+.revise_Form .revise_Field .checkboxWrapper input:first-child {
+  margin-right: 2rem;
+}
+.revise_Form .revise_Field #revise_Submit {
+  font-size: 2rem;
+  font-weight: 700;
+  background-color: #fff;
+  color: #000;
+  border: 3px solid #000;
+  padding: 1rem 8rem;
+  cursor: pointer;
+  margin-bottom: 5rem;
+  transition: all 0.5s;
+}
+.revise_Form .revise_Field #revise_Submit:hover {
+  background-color: #000;
+  color: #fff;
+}
+.revise_Form .revise_Field button {
+  margin-top: 3rem;
+}
+.revise_Form .revise_Field #revise_Reset {
+  font-size: 2rem;
+  font-weight: 700;
+  background-color: #7a7a7a;
+  color: #fff;
+  border: 0;
+  padding: 1rem;
+  cursor: pointer;
+  margin-bottom: 5rem;
+  margin-right: 2rem;
+  transition: all 0.5s;
+}
+.revise_Form .revise_Field #revise_Reset:hover {
+  background-color: #000;
+  color: #fff;
+}
+.revise_Form .input_Error {
+  display: none;
+  font-size: 1.8rem;
+  color: #ee0a21;
+}
+.revise_Form i {
+  position: relative;
+  font-size: 2rem;
+  padding: 0.5rem;
+  align-self: flex-end;
+  bottom: 3.5rem;
+  cursor: pointer;
+}
