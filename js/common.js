@@ -28,18 +28,17 @@ function checkSignIn() {
             if (data == 'true') {
                 $('.logo').after(` 
                 <div class='nav_Menu'>
-                    <a href='http://hitsujishop_test.com:6080/hitsuji.html' class='navMenu_Link' id='goods_Link'>Goods</a>
+                    <a href='http://hitsujishop_test.com:6080/hitsuji%20copy.html' class='navMenu_Link' id='goods_Link'>Goods</a>
                     <a href='http://hitsujishop_test.com:6080/account.html' class='navMenu_Link' id='account_Link'>Account</a>
-                    <a href='' class='navMenu_Link' id='order_Link'>Order</a>
+                    <a href='http://hitsujishop_test.com:6080/order.html' class='navMenu_Link' id='order_Link'>Order</a>
                     <a href='' class='navMenu_Link' id='faq_Link'>FAQ</a>
                     <a href='###' class='navMenu_Link' id='logout_Link' onclick='logOut()'>Log out</a>
                 </div>`);
             } else {
                 $('.logo').after(` 
                 <div class='nav_Menu'>
-                    <a href='http://hitsujishop_test.com:6080/hitsuji.html' class='navMenu_Link' id='goods_Link'>Goods</a>
+                    <a href='http://hitsujishop_test.com:6080/hitsuji%20copy.html' class='navMenu_Link' id='goods_Link'>Goods</a>
                     <a href='###'' class='navMenu_Link' id='signup_Link' onclick='showSignIn()'>SignIn/Up</a>
-                   
                     <a href='' class='navMenu_Link' id='faq_Link'>FAQ</a>
                 </div>`);
             }
@@ -80,7 +79,7 @@ function signIn() {
                         </div>`);
                     $('#signIn_Success').fadeIn(3000, function() {
                         $('#signInForm_Wrapper').fadeOut(1000, function() {
-                            window.location.href = 'http://hitsujishop_test.com:6080/hitsuji.html';
+                            window.location.href = 'http://hitsujishop_test.com:6080/hitsuji%20copy.html';
                         });
                         console.log('123');
                     });
@@ -196,4 +195,25 @@ function showSuccessWindow(text, href) {
         console.log('123');
     });
 
+}
+
+function cartScroll() {
+    $(window).scroll(function() {
+        let st = $(window).scrollTop(),
+            wh = document.documentElement.scrollHeight;
+        let cart = $('.cartWrapper');
+
+
+        if (st > 0) {
+            cart.addClass('cart_Animate');
+
+            window.setTimeout(() => {
+                cart.removeClass('cart_Animate');
+
+            }, 1500)
+
+        } else {
+
+        }
+    })
 }

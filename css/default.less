@@ -23,6 +23,17 @@
 
 }
 
+@keyframes cart {
+    0% {
+        top: 88vh;
+    }
+
+
+    100% {
+        top: 80vh;
+    }
+}
+
 :root {
     // -webkit-text-size-adjust: none;
     font-size: 10px;
@@ -40,6 +51,7 @@ html {
     serif;
     font-weight: 400;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 a {
@@ -179,7 +191,7 @@ h5 {
         justify-content: space-between;
         align-items: center;
 
-        .logo {
+        .logo a {
             display: flex;
             flex-direction: row;
             justify-content: center;
@@ -490,4 +502,48 @@ h5 {
         font-size: 1.8rem;
         color: #ee0a21;
     }
+}
+
+.cartWrapper {
+    position: fixed;
+    left: 87.5%;
+    top: 80vh;
+    width: 6rem;
+    box-sizing: border-box;
+    background-color: #000;
+    color: #fff;
+
+
+    svg {
+        box-sizing: border-box;
+        padding: 1.2rem;
+        fill: #fff;
+    }
+
+    p {
+        text-align: center;
+        margin: 0 auto;
+
+        font-size: @DefaultH5;
+
+
+    }
+
+    p:nth-child(2) {
+        width: 100%;
+        height: 5rem;
+        line-height: 5rem;
+        border-bottom: 2px solid #fff;
+    }
+
+    p:nth-child(3) {
+        width: 100%;
+        height: 30px;
+        padding-bottom: .5rem 0;
+        line-height: 30px;
+    }
+}
+
+.cart_Animate {
+    animation: cart 1.5s ease-in-out;
 }

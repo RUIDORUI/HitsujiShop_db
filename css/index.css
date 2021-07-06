@@ -37,11 +37,10 @@
   border-bottom: 1px solid #000;
 }
 .container .goods_Wrapper .goods_Box .goods_Button button {
-  padding: 0;
   background-color: #fff;
 }
 .container .goods_Wrapper .goods_Box .goods_Button .goods_ButtonL {
-  height: 3rem;
+  height: 4rem;
   line-height: 3rem;
   width: 40%;
   padding-right: 1rem;
@@ -50,25 +49,26 @@
   border-bottom: 0;
   border-right: 0;
   transition: all 0.5s;
+  cursor: pointer;
 }
 .container .goods_Wrapper .goods_Box .goods_Button .goods_ButtonL:hover {
   background-color: #000;
-}
-.container .goods_Wrapper .goods_Box .goods_Button .goods_ButtonL:hover a {
   color: #fff;
 }
 .container .goods_Wrapper .goods_Box .goods_Button .goods_ButtonR {
-  height: 3rem;
-  width: 20%;
+  height: 4rem;
+  width: 30%;
   border: 1px solid #000;
   border-bottom: 0;
   transition: all 0.5s;
+  cursor: pointer;
+}
+.container .goods_Wrapper .goods_Box .goods_Button .goods_ButtonR svg {
+  height: 4rem;
+  width: 40%;
 }
 .container .goods_Wrapper .goods_Box .goods_Button .goods_ButtonR:hover {
   background-color: #000;
-}
-.container .goods_Wrapper .goods_Box .goods_Button .goods_ButtonR:hover a {
-  color: #fff;
 }
 .container .goods_Wrapper .goods_Box .goods_Button .goods_ButtonR:hover svg {
   fill: #fff;

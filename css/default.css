@@ -10,6 +10,14 @@
     right: 0px;
   }
 }
+@keyframes cart {
+  0% {
+    top: 88vh;
+  }
+  100% {
+    top: 80vh;
+  }
+}
 :root {
   font-size: 10px;
 }
@@ -17,6 +25,7 @@ html {
   font-family: 'Medium', 'Times New Roman', Times, serif;
   font-weight: 400;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 @font-face {
   font-family: 'Medium';
@@ -125,17 +134,17 @@ h5 {
   justify-content: space-between;
   align-items: center;
 }
-.container .navBar .logo {
+.container .navBar .logo a {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-.container .navBar .logo .logo_Icon {
+.container .navBar .logo a .logo_Icon {
   width: 5rem;
   height: 5rem;
 }
-.container .navBar .logo .logo_Text {
+.container .navBar .logo a .logo_Text {
   padding-left: 1rem;
   font-size: 1.8rem;
   font-weight: 700;
@@ -355,4 +364,38 @@ h5 {
   display: none;
   font-size: 1.8rem;
   color: #ee0a21;
+}
+.cartWrapper {
+  position: fixed;
+  left: 87.5%;
+  top: 80vh;
+  width: 6rem;
+  box-sizing: border-box;
+  background-color: #000;
+  color: #fff;
+}
+.cartWrapper svg {
+  box-sizing: border-box;
+  padding: 1.2rem;
+  fill: #fff;
+}
+.cartWrapper p {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1.8rem;
+}
+.cartWrapper p:nth-child(2) {
+  width: 100%;
+  height: 5rem;
+  line-height: 5rem;
+  border-bottom: 2px solid #fff;
+}
+.cartWrapper p:nth-child(3) {
+  width: 100%;
+  height: 30px;
+  padding-bottom: 0.5rem 0;
+  line-height: 30px;
+}
+.cart_Animate {
+  animation: cart 1.5s ease-in-out;
 }

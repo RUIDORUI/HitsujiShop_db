@@ -55,7 +55,7 @@ if ($num !== 0) {
                                         <li>Shipping, packing and handling fees will be charged for each order.</li>
                                         <li>Please note that the design, color tone and size of the actual product may differ.</li>
                                     </ul>
-                                    <a href='http://hitsujishop.com:6080/' class='back_Link'>Back</a>
+                                    <a href='http://hitsujishop_test.com:6080/hitsuji copy.html' class='back_Link'>Back</a>
                                 </div>
                             </div>
                             <div class='informR'>
