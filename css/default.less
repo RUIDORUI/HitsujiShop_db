@@ -4,6 +4,8 @@
 @DefaultH3: 3rem;
 @DefaultH4: 2rem;
 @DefaultH5: 1.8rem;
+@color_Warning: #BD2D00;
+@color_Second: #C4C4C4;
 
 @keyframes show {
     0% {
@@ -546,4 +548,13 @@ h5 {
 
 .cart_Animate {
     animation: cart 1.5s ease-in-out;
+}
+
+.button_Disable {
+    pointer-events: none !important;
+    background-color: @color_Second !important;
+    color: #fff !important;
+
+
+
 }

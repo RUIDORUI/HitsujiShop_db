@@ -1,0 +1,287 @@
+@import 'default.css';
+.section_Title {
+  margin: 0 auto;
+  width: 50%;
+  margin: 2rem 0rem;
+  border-bottom: 2px solid #000;
+}
+.total_Title {
+  padding: 2rem;
+  font-size: 3rem;
+  text-align: right;
+  border-top: 5px solid #000;
+}
+table {
+  font-size: 2rem;
+  border-spacing: 0px;
+}
+table th,
+table td {
+  text-align: center;
+}
+table thead th {
+  font-weight: 400;
+  padding: 1rem 10rem;
+  border-top: 0.5px solid #303030;
+  border-bottom: 0.5px solid #303030;
+  border-right: 0;
+}
+table thead th:first-child {
+  border-left: 1px solid #303030;
+}
+table thead th:last-child {
+  border-right: 1px solid #303030;
+}
+table tbody tr:hover:hover {
+  background-color: #f5f5f5;
+}
+table tbody td {
+  padding: 5rem 10rem;
+  border-bottom: 0.5px solid #303030;
+  border-right: 0;
+}
+table tbody:last-child td {
+  border-bottom: 3px solid #303030;
+}
+.cart_Section {
+  position: relative;
+  animation: show 0.3s linear;
+  margin: 4rem;
+  border-bottom: 4px double #000;
+}
+.cart_Section .tableWrapper {
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 6rem;
+}
+.cart_Section .tableWrapper table {
+  font-size: 2rem;
+  border-spacing: 0px;
+}
+.cart_Section .tableWrapper table .table_Header {
+  background-color: #000;
+  color: #fff;
+  font-weight: 400;
+  padding: 1rem 3rem;
+  border: 0.5px solid #303030;
+  border-right: 0;
+}
+.cart_Section .tableWrapper table .table_Header:last-child {
+  border-right: 0.5px solid #303030;
+}
+.cart_Section .tableWrapper table .table_Data {
+  text-align: center;
+  padding: 0.5rem 2rem;
+  border: 0.5px solid #303030;
+  border-right: 0;
+}
+.cart_Section .tableWrapper table .table_Data:last-child {
+  border-right: 0.5px solid #303030;
+}
+.cart_Section .tableWrapper table .table_Data img {
+  display: block;
+  width: 10rem;
+  margin: 1rem auto;
+}
+.cart_Section .tableWrapper table .table_Data_Row:hover {
+  background-color: #f5f5f5;
+}
+.cart_Section .tableWrapper table .table_Data_Row .delete_Cart {
+  border: 0;
+  background-color: transparent;
+  color: #ee0a21;
+  cursor: pointer;
+  transition: 0.5s all;
+}
+.cart_Section .tableWrapper table .table_Data_Row .delete_Cart:hover {
+  color: #a32e2e;
+  text-decoration: underline;
+}
+.cart_Section tfoot {
+  margin-top: 2rem;
+}
+.cart_Section .checkoutSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.cart_Section .checkout_Button {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  font-size: 2rem;
+  text-align: center;
+  cursor: pointer;
+  background-color: #000;
+  border: 0;
+  color: #fff;
+  transition: 0.5s all;
+}
+.cart_Section .checkout_Button:hover {
+  border: 1px solid #000;
+  background-color: #fff;
+  color: #000;
+}
+.checkout_Section {
+  position: relative;
+  animation: show 0.3s linear;
+  margin: 10rem 4rem;
+  border-bottom: 4px double #000;
+}
+.checkout_Section .checkout_Item_ListWrapper {
+  width: 80%;
+  margin: 0 auto;
+  overflow-x: scroll;
+}
+.checkout_Section h4 {
+  margin: 4rem 0;
+  font-weight: 400;
+}
+.sender_Information {
+  margin: 10rem auto;
+}
+.sender_Information h3 {
+  margin: 0 auto;
+  text-align: center;
+}
+.sender_Information h5 {
+  margin: 4rem auto;
+  text-align: center;
+  border-bottom: 0;
+  color: #BD2D00;
+}
+.sender_Information .sender_InputField {
+  position: relative;
+  width: auto;
+  margin: 0 auto;
+  text-align: center;
+  width: 50%;
+}
+.sender_Information .sender_InputField .sender_Title {
+  margin: 2rem 0;
+  font-weight: 700;
+}
+.sender_Information .sender_InputField .inputWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: flex-start;
+  position: relative;
+  margin: 2rem;
+  width: auto;
+}
+.sender_Information .sender_InputField .input_Half {
+  display: inline-flex;
+  width: 42%;
+}
+.sender_Information .sender_InputField .sender_Input {
+  font-size: 1.8rem;
+  position: relative;
+  text-align: left;
+  height: 3rem;
+  margin-left: 0;
+  width: 100%;
+}
+.sender_Information .sender_InputField .checkboxWrapper {
+  font-size: 2rem;
+}
+.sender_Information .sender_InputField .checkboxWrapper label:first-child {
+  margin-right: 6rem;
+}
+.sender_Information .sender_InputField .checkboxWrapper input:first-child {
+  margin-right: 2rem;
+}
+.sender_Information .sender_InputField .checkboxWrapper .iconWrapper {
+  display: inline-block;
+  width: 4rem;
+  height: 4rem;
+}
+.sender_Information .sender_InputField .submitWrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 2rem;
+}
+.sender_Information .sender_InputField #sender_Submit {
+  right: 2rem;
+  text-align: right;
+  font-size: 2rem;
+  font-weight: 700;
+  background-color: #fff;
+  color: #000;
+  border: 3px solid #000;
+  padding: 1rem 6rem;
+  cursor: pointer;
+  margin: 6rem 0;
+  transition: all 0.5s;
+}
+.sender_Information .sender_InputField #sender_Submit:hover {
+  background-color: #000;
+  color: #fff;
+}
+.confirm_Order_Section {
+  position: relative;
+  animation: show 0.3s linear;
+  margin: 10rem 6rem;
+  border-bottom: 4px double #000;
+}
+.confirm_Order_Section .checkout_Item_ListWrapper {
+  width: 80%;
+  margin: 0 auto;
+  overflow-x: scroll;
+  margin-bottom: 8rem;
+}
+.confirm_Order_Section h3 {
+  width: 100%;
+  color: #BD2D00;
+  margin: 6rem auto;
+  text-align: center;
+}
+.confirm_Order_Section h2 {
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 8rem;
+}
+.confirm_Order_Section span {
+  font-size: 2rem;
+  font-weight: 700;
+  border-bottom: 1px solid #000;
+  margin-right: 4rem;
+}
+.confirm_Order_Section .spanWrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4rem;
+}
+.confirm_Order_Section .confirm_OrderWrapper {
+  width: 80%;
+  border: 2px solid #000;
+  padding: 10rem 2rem;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+}
+.confirm_Order_Section .checkout_Item_List {
+  width: 100%;
+  margin: 0 auto;
+}
+.confirm_Order_Section .sender_InforWrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+.confirm_Order_Section .sender_InforWrapper h4 {
+  margin-bottom: 6rem;
+}
+.confirm_Order_Section .sender_InforWrapper .sender_Infor_Title {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.confirm_Order_Section .sender_InforWrapper .sender_Infor {
+  font-size: 1.8rem;
+  margin-bottom: 6rem;
+  font-weight: 400;
+}
+.confirm_Order_Section .sender_InforWrapper span {
+  border-bottom: 0;
+  font-weight: 400;
+}

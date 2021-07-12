@@ -88,9 +88,9 @@
 }
 .itemWrapper .itemInform .itemInform_Bottom .informR {
   width: 60%;
-  font-size: 2rem;
+  font-size: 3rem;
 }
-.itemWrapper .itemInform .itemInform_Bottom .informR .informRTitle {
+.itemWrapper .itemInform .itemInform_Bottom .informR .informR_Title {
   font-weight: 700;
   width: 80%;
   border-bottom: 1px solid #000;

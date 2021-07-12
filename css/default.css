@@ -399,3 +399,8 @@ h5 {
 .cart_Animate {
   animation: cart 1.5s ease-in-out;
 }
+.button_Disable {
+  pointer-events: none !important;
+  background-color: #C4C4C4 !important;
+  color: #fff !important;
+}

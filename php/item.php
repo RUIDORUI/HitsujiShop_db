@@ -11,6 +11,7 @@ $num = mysqli_num_rows($result);
 
 if ($num !== 0) {
     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+    $id = $row['id'];
     $title = $row['title'];
     $information = $row['information'];
     $price = $row['price'];
@@ -59,41 +60,44 @@ if ($num !== 0) {
                                 </div>
                             </div>
                             <div class='informR'>
-                                <form action='' method=''>
-                                    <div class='item_Size'>
-                                        <div class='informRTitle'>Size</div>
-                                        <label for='size_S'>S &nbsp;<input type='radio' name='size' id='size_S' value='S'></label>
-                                        <label for='size_M'>M &nbsp;<input type='radio' name='size' id='size_M' value='M'></label>
-                                        <label for='size_L'>L &nbsp;<input type='radio' name='size' id='size_L' value='L'></label>
-                                        <label for='size_XL'>XL &nbsp;<input type='radio' name='size' id='size_XL' value='XL'></label>
-                                    </div>
-                                    <div class='item_Number'>
-                                        <div class='informRTitle'>Number</div>
-                                        <select name='number' id='number'>
-                                            <option disabled value>choose number</option>
-                                            <option value='1'>1</option>
-                                            <option value='2'>2</option>
-                                            <option value='3'>3</option>
-                                            <option value='4'>4</option>
-                                            <option value='5'>5</option>
-                                            <option value='6'>6</option>
-                                            <option value='7'>7</option>
-                                            <option value='8'>8</option>
-                                        </select>
-                                    </div>
-                                    <div class='item_Price'>
-                                        <div class='informRTitle'>Price</div>
-                                        <div class='priceNumber'>\$$price</div>
-                                    </div>
-                                    <div class='item_Checkout'>
-                                        <button id='submit' type='submit'>Checkout</button>
-                                        <button id='submit' type='submit'>Add Cart</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+                                <form id='item_Form' action='' method='post'>";
+    if ($row['category'] == 'cloth') {
+        $response .= "<div class='item_Size'>
+                    <div class='informR_Title'>Size</div>
+                    <label for='size_S'>S &nbsp;<input type='radio' name='size' id='size_S' value='S' required></label>
+                    <label for='size_M'>M &nbsp;<input type='radio' name='size' id='size_M' value='M' required></label>
+                    <label for='size_L'>L &nbsp;<input type='radio' name='size' id='size_L' value='L' required></label>
+                    <label for='size_XL'>XL &nbsp;<input type='radio' name='size' id='size_XL' value='XL' required></label>
                 </div>";
+    }
+
+    $response .= " <div class='item_Number'>
+                        <div class='informR_Title'>Number</div>
+                        <select name='qty' id='qty' required>
+                            <option disabled value>choose number</option>
+                            <option value='1'>1</option>
+                            <option value='2'>2</option>
+                            <option value='3'>3</option>
+                            <option value='4'>4</option>
+                            <option value='5'>5</option>
+                            <option value='6'>6</option>
+                            <option value='7'>7</option>
+                            <option value='8'>8</option>
+                        </select>
+                    </div>
+                    <div class='item_Price'>
+                        <div class='informR_Title'>Price</div>
+                        <div class='priceNumber'>\$$price</div>
+                    </div>
+                    <div class='item_Checkout'>
+                        <button id='checkOut_Btn' type='submit' formaction=''>Checkout</button>
+                        <button id='addCart_Btn' type='submit' formaction='javascript:addCart()' data-cartid = '{$id}'>Add Cart</button>
+                    </div>
+                    </form>
+                    </div>
+                    </div>
+                    </div>
+                    </div>";
 
 }
 echo $response;

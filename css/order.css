@@ -1,91 +1,64 @@
 @import 'default.css';
 .order_Section {
-  animation: show 0.3s linear;
+  position: relative;
   margin: 4rem;
+  height: 50vh;
+  animation: show 0.3s linear;
 }
-.order_Section .table_Title {
+.order_Section .order_Select_Title {
   margin: 0 auto;
-}
-.order_Section .tableWrapper {
-  width: 90%;
-  margin: 0 auto;
-}
-.order_Section .tableWrapper .table_Title {
   width: 50%;
   margin: 2rem 0rem;
   border-bottom: 2px solid #000;
 }
-.order_Section .tableWrapper table {
-  font-size: 2rem;
-  border-spacing: 0px;
-}
-.order_Section .tableWrapper table .table_Header {
-  background-color: #000;
-  color: #fff;
-  font-weight: 400;
-  padding: 1rem 3rem;
-  border: 0.5px solid #303030;
-  border-right: 0;
-}
-.order_Section .tableWrapper table .table_Header:last-child {
-  border-right: 0.5px solid #303030;
-}
-.order_Section .tableWrapper table .table_Data {
-  text-align: center;
-  padding: 1rem 3rem;
-  border: 0.5px solid #303030;
-  border-right: 0;
-}
-.order_Section .tableWrapper table .table_Data:last-child {
-  border-right: 0.5px solid #303030;
-}
-.order_Section .tableWrapper table .table_Data img {
-  display: block;
-  width: 10rem;
-  margin: 1rem auto;
-}
-.order_Section .tableWrapper table .table_Data_Row:hover {
-  background-color: #f5f5f5;
-}
-.order_Section .tableWrapper table .table_Data_Row .delete_Cart {
-  border: 0;
-  background-color: transparent;
-  color: #ee0a21;
-  cursor: pointer;
-  transition: 0.5s all;
-}
-.order_Section .tableWrapper table .table_Data_Row .delete_Cart:hover {
-  color: #a32e2e;
-  text-decoration: underline;
-}
-.order_Section tfoot {
-  margin-top: 2rem;
-}
-.order_Section .checkoutSection {
+.order_SelectWrapper {
+  width: 50%;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-.order_Section .total_Title {
-  padding: 2rem;
+  flex-direction: row;
+  justify-content: center;
+  padding: 10rem 2rem;
   font-size: 3rem;
-  text-align: right;
-  border-top: 5px double #000;
 }
-.order_Section .checkout_Button {
+.order_SelectWrapper .icon {
+  width: 7rem;
+  height: 7rem;
+}
+.order_SelectWrapper .order_Select_Order {
+  margin-left: 10rem;
+}
+.order_Select_Cart a,
+.order_Select_Order a {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+.order_Select_Cart a .text,
+.order_Select_Order a .text {
+  position: relative;
+  transition: all 0.5s;
+}
+.order_Select_Cart a .text::before,
+.order_Select_Order a .text::before {
   display: block;
-  width: 100%;
-  padding: 1rem;
-  font-size: 2rem;
-  text-align: center;
-  cursor: pointer;
-  background-color: #000;
-  border: 0;
-  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  -webkit-transition: width 0.35s cubic-bezier(0.65, 0, 0.35, 1);
+  transition: width 0.35s cubic-bezier(0.65, 0, 0.35, 1);
+  border-bottom: 1px solid #000;
+  width: 0;
+  height: 1.5px;
+  content: "";
+}
+.order_Select_Cart a .icon,
+.order_Select_Order a .icon {
   transition: 0.5s all;
 }
-.order_Section .checkout_Button:hover {
-  border: 1px solid #000;
-  background-color: #fff;
-  color: #000;
+.order_Select_Cart a:hover .text::before,
+.order_Select_Order a:hover .text::before {
+  background-color: #000000;
+  width: 100%;
 }

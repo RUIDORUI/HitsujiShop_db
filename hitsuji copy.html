@@ -113,7 +113,25 @@
                 })
             })
 
+            // $('body').on('click', '#addCart_Btn', addCart())
+
+
         })
+
+        function addCart() {
+            let cart_Id = $('#addCart_Btn').data('cartid');
+            $.ajax({
+                type: 'POST',
+                url: `http://hitsujishop_test.com:6080/php/order.php?cartId=${cart_Id}&do=cart`,
+                data: $('#item_Form').serialize(),
+                success: function() {},
+                error: function(xhr) {
+                    alert(xhr);
+                }
+            })
+
+            console.log('added');
+        }
     </script>
 </head>
 
