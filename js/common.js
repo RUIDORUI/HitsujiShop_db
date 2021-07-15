@@ -25,13 +25,23 @@ function checkSignIn() {
         type: 'POST',
         url: 'http://hitsujishop_test.com:6080/php/checkSignIn.php',
         success: function(data) {
-            if (data == 'true') {
+
+            if (data == 'member') {
                 $('.logo').after(` 
                 <div class='nav_Menu'>
                     <a href='http://hitsujishop_test.com:6080/hitsuji%20copy.html' class='navMenu_Link' id='goods_Link'>Goods</a>
                     <a href='http://hitsujishop_test.com:6080/account.html' class='navMenu_Link' id='account_Link'>Account</a>
                     <a href='http://hitsujishop_test.com:6080/order.html' class='navMenu_Link' id='order_Link'>Order</a>
-                    <a href='' class='navMenu_Link' id='faq_Link'>FAQ</a>
+                    <a href='http://hitsujishop_test.com:6080/faq.html' class='navMenu_Link' id='faq_Link'>FAQ</a>
+                    <a href='###' class='navMenu_Link' id='logout_Link' onclick='logOut()'>Log out</a>
+                </div>`);
+            } else if (data == 'administrator') {
+                $('.logo').after(` 
+                <div class='nav_Menu'>
+                    <a href='http://hitsujishop_test.com:6080/hitsuji%20copy.html' class='navMenu_Link' id='goods_Link'>Goods</a>
+                    <a href='http://hitsujishop_test.com:6080/account.html' class='navMenu_Link' id='account_Link'>Account</a>
+                    <a href='http://hitsujishop_test.com:6080/order_List.html' class='navMenu_Link' id='order_Link'>Order</a>
+                    <a href='http://hitsujishop_test.com:6080/faq.html' class='navMenu_Link' id='faq_Link'>FAQ</a>
                     <a href='###' class='navMenu_Link' id='logout_Link' onclick='logOut()'>Log out</a>
                 </div>`);
             } else {
@@ -39,7 +49,7 @@ function checkSignIn() {
                 <div class='nav_Menu'>
                     <a href='http://hitsujishop_test.com:6080/hitsuji%20copy.html' class='navMenu_Link' id='goods_Link'>Goods</a>
                     <a href='###'' class='navMenu_Link' id='signup_Link' onclick='showSignIn()'>SignIn/Up</a>
-                    <a href='' class='navMenu_Link' id='faq_Link'>FAQ</a>
+                    <a href='http://hitsujishop_test.com:6080/faq.html' class='navMenu_Link' id='faq_Link'>FAQ</a>
                 </div>`);
             }
             console.log(data);
@@ -214,6 +224,115 @@ function cartScroll() {
 
         } else {
 
+        }
+    })
+
+
+}
+
+function show_Min_Cart() {
+    $('body').on('click', '.show_Cart', function() {
+        $('.footer').after('<div id="signIn_Section"><div id="signInForm_Wrapper"></div></div>');
+
+        $.ajax({
+            type: 'POST',
+            url: `http://hitsujishop_test.com:6080/php/order.php?do=show_Cart`,
+            success: function(data) {
+
+                $('#signInForm_Wrapper').append(data);
+                let b = document.querySelector(".checkout_Button");
+
+                b.setAttribute("onclick", "check_Cart_Signin()");
+
+
+
+            },
+            error: function(xhr) {
+                alert(xhr);
+            }
+        });
+
+
+        $('#signInForm_Wrapper').css({ 'width': '80%' });
+        $('#signInForm_Wrapper').fadeIn();
+
+        $('#signIn_Section').on('click', function(e) {
+            if (e.target == this) {
+                $(this).fadeOut(500, function() {
+                    $(this).remove();
+                });
+
+
+            }
+
+        });
+        $('body').on('click', '.delete_Cart', function() {
+            let cart_Id = $(this).data('cartid');
+            let qty = $(this).data('qty');
+            let delete_Item = $(this);
+            console.log($(this));
+            console.log(cart_Id);
+            $.ajax({
+                type: 'POST',
+                url: `http://hitsujishop_test.com:6080/php/order.php?do=delete_Cart&cartid=${cart_Id}&qty=${qty}`,
+                success: function(data) {
+                    // let response = JSON.parse(data);
+                    let new_Total = data;
+                    delete_Item.parent().parent().remove();
+                    console.log($(this));
+                    $('.total_Title').text(`Total：$${new_Total}`);
+                    // console.log(response);
+                    cart_Total(0);
+                },
+                error: function(xhr) {
+                    alert(xhr);
+                }
+            })
+        });
+
+
+
+    });
+
+
+
+
+
+}
+
+function check_Cart_Signin() {
+    $.ajax({
+        type: 'POST',
+        url: 'http://hitsujishop_test.com:6080/php/checkSignIn.php',
+        success: function(data) {
+            if (data == 'member' || data == 'administrator') {
+                location.href = 'http://hitsujishop_test.com:6080/cart.html';
+            } else {
+                $('#signIn_Section').remove();
+                showSignIn();
+            }
+        },
+        error: function(xhr) {
+            alert(xhr);
+        }
+
+    });
+}
+
+function cart_Total(a) {
+    $.ajax({
+        type: 'POST',
+        url: `http://hitsujishop_test.com:6080/php/order.php?do=count_Total`,
+        success: function(data) {
+            let t = data + a;
+            console.log('total：' + data);
+
+            $('#cart_Number').fadeOut();
+            document.querySelector('#cart_Number').innerHTML = data;
+            $('#cart_Number').fadeIn("slow");
+        },
+        error: function(xhr) {
+            alert(xhr);
         }
     })
 }

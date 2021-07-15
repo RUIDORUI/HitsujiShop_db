@@ -11,24 +11,24 @@
 .container .goods_Wrapper {
   width: 25%;
 }
-.container .goods_Wrapper .goods_Box {
+.container .goods_Box {
   font-size: 2rem;
   margin: 2rem;
 }
-.container .goods_Wrapper .goods_Box .goods_Img {
+.container .goods_Box .goods_Img {
   width: 100%;
   padding-top: 120%;
   background: center url(/shopImg/Item1/Item1_1.jpg) no-repeat;
   background-size: cover;
   transition: all 0.5s;
 }
-.container .goods_Wrapper .goods_Box .goods_Img:hover {
+.container .goods_Box .goods_Img:hover {
   filter: brightness(0.8);
 }
-.container .goods_Wrapper .goods_Box .goods_Title {
+.container .goods_Box .goods_Title {
   margin-top: 2rem;
 }
-.container .goods_Wrapper .goods_Box .goods_Button {
+.container .goods_Button {
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -36,10 +36,10 @@
   margin-top: 2rem;
   border-bottom: 1px solid #000;
 }
-.container .goods_Wrapper .goods_Box .goods_Button button {
+.container .goods_Button button {
   background-color: #fff;
 }
-.container .goods_Wrapper .goods_Box .goods_Button .goods_ButtonL {
+.container .goods_Button .goods_ButtonL {
   height: 4rem;
   line-height: 3rem;
   width: 40%;
@@ -51,11 +51,11 @@
   transition: all 0.5s;
   cursor: pointer;
 }
-.container .goods_Wrapper .goods_Box .goods_Button .goods_ButtonL:hover {
+.container .goods_Button .goods_ButtonL:hover {
   background-color: #000;
   color: #fff;
 }
-.container .goods_Wrapper .goods_Box .goods_Button .goods_ButtonR {
+.container .goods_Button .goods_ButtonR {
   height: 4rem;
   width: 30%;
   border: 1px solid #000;
@@ -63,13 +63,45 @@
   transition: all 0.5s;
   cursor: pointer;
 }
-.container .goods_Wrapper .goods_Box .goods_Button .goods_ButtonR svg {
+.container .goods_Button .goods_ButtonR svg {
   height: 4rem;
   width: 40%;
 }
-.container .goods_Wrapper .goods_Box .goods_Button .goods_ButtonR:hover {
-  background-color: #000;
+.container .goods_Button .goods_ButtonR:hover {
+  background-color: #494848;
 }
-.container .goods_Wrapper .goods_Box .goods_Button .goods_ButtonR:hover svg {
+.container .goods_Button .goods_ButtonR:hover svg {
   fill: #fff;
+}
+@media screen and (max-width: 1080px) {
+  .container .goods_Wrapper {
+    width: 50%;
+  }
+  .container .goods_Button .goods_ButtonR {
+    width: 40%;
+    height: 5rem;
+  }
+  .container .goods_Button .goods_ButtonL {
+    width: 60%;
+    height: 5rem;
+  }
+  .container .goods_Box {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .container .goods_Wrapper {
+    width: 100%;
+  }
+  .container .goods_Button .goods_ButtonR {
+    width: 40%;
+    height: 5rem;
+  }
+  .container .goods_Button .goods_ButtonL {
+    width: 60%;
+    height: 5rem;
+  }
+  .container .goods_Box {
+    font-size: 3rem;
+  }
 }

@@ -3,11 +3,12 @@ session_start();
 
 if (isset($_SESSION['signed'])) {
     $signed = $_SESSION['signed'];
-    if ($signed == 'true') {
-        echo 'true';
+    $level = $_SESSION['level'];
+    if ($level == 'administrator') {
+        echo 'administrator';
 
-    } else {
-        echo 'false';
+    } else if ($level == 'member') {
+        echo 'member';
     }
 } else {
     echo 'never signed';

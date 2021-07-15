@@ -47,14 +47,15 @@ table tbody:last-child td {
   position: relative;
   animation: show 0.3s linear;
   margin: 4rem;
-  border-bottom: 4px double #000;
 }
 .cart_Section .tableWrapper {
   width: 90%;
   margin: 0 auto;
   padding-bottom: 6rem;
+  overflow-x: scroll;
 }
 .cart_Section .tableWrapper table {
+  width: 100%;
   font-size: 2rem;
   border-spacing: 0px;
 }
@@ -80,7 +81,7 @@ table tbody:last-child td {
 }
 .cart_Section .tableWrapper table .table_Data img {
   display: block;
-  width: 10rem;
+  width: 5rem;
   margin: 1rem auto;
 }
 .cart_Section .tableWrapper table .table_Data_Row:hover {
@@ -89,7 +90,7 @@ table tbody:last-child td {
 .cart_Section .tableWrapper table .table_Data_Row .delete_Cart {
   border: 0;
   background-color: transparent;
-  color: #ee0a21;
+  color: #BD2D00;
   cursor: pointer;
   transition: 0.5s all;
 }
@@ -126,7 +127,7 @@ table tbody:last-child td {
   position: relative;
   animation: show 0.3s linear;
   margin: 10rem 4rem;
-  border-bottom: 4px double #000;
+  display: none;
 }
 .checkout_Section .checkout_Item_ListWrapper {
   width: 80%;
@@ -222,7 +223,7 @@ table tbody:last-child td {
   position: relative;
   animation: show 0.3s linear;
   margin: 10rem 6rem;
-  border-bottom: 4px double #000;
+  display: none;
 }
 .confirm_Order_Section .checkout_Item_ListWrapper {
   width: 80%;
@@ -284,4 +285,37 @@ table tbody:last-child td {
 .confirm_Order_Section .sender_InforWrapper span {
   border-bottom: 0;
   font-weight: 400;
+}
+@media screen and (max-width: 1080px) {
+  .sender_Information .sender_InputField .inputWrapper {
+    margin: 0;
+  }
+  .sender_Information .sender_InputField .inputWrapper .submitWrapper {
+    justify-content: start;
+  }
+  .sender_Information .sender_InputField .input_Half {
+    width: 100%;
+  }
+  .sender_Information .sender_InputField .checkboxWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .sender_Information .sender_InputField .checkboxWrapper label {
+    display: block;
+  }
+  .sender_Information .sender_InputField .checkboxWrapper label:first-child {
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (max-width: 1080px) {
+  .confirm_Order_Section,
+  .checkout_Section {
+    margin: 10rem 0;
+  }
+  .confirm_Order_Section .confirm_OrderWrapper {
+    width: 100%;
+  }
 }

@@ -35,10 +35,9 @@ switch ($_GET['do']) {
         $new_Address = $_REQUEST['input_Address'];
 
         $sql = "UPDATE `account` SET`name` = '{$new_Name}',`password` = '{$new_Password}',`gender` = '{$new_Gender}',`email` = '{$new_Email}',`phone` = '{$new_Phone}',`address` = '{$new_Address}'WHERE`name` = '{$oldName}'";
-        
 
         $result = mysqli_query($connect, $sql);
-        
+
         echo $result;
         // mysqli_free_result($result);
         //資料庫離線
@@ -52,7 +51,7 @@ switch ($_GET['do']) {
     case 'signIn':
         $input_Name = $_REQUEST['signIn_Account'];
         $input_Password = $_REQUEST['signIn_Password'];
-        $sql = "SELECT `name`,`password` FROM `account` WHERE `name` = '{$input_Name}'";
+        $sql = "SELECT `name`,`password`,`level` FROM `account` WHERE `name` = '{$input_Name}'";
         $result = mysqli_query($connect, $sql);
         // print_r($result);
         // echo $sql;
@@ -70,8 +69,9 @@ switch ($_GET['do']) {
             session_start();
             $_SESSION['accountName'] = $input_Name;
             $_SESSION['signed'] = 'true';
+            $_SESSION['level'] = $row[2];
             if ($row[0] == $input_Name && $row[1] == $input_Password) {
-                $response = array('accountName' => "{$input_Name}", 'result' => 'true','session'=>$_SESSION['accountName'],'signed'=>$_SESSION['signed']);
+                $response = array('accountName' => "{$input_Name}", 'result' => 'true', 'session' => $_SESSION['accountName'], 'signed' => $_SESSION['signed']);
 
                 echo json_encode($response);
 
@@ -93,9 +93,9 @@ switch ($_GET['do']) {
         unset($_SESSION['accountName']);
         unset($_SESSION['signed']);
         echo 'Log Out';
-        
+
         break;
-        
+
     default:
         # code...
         break;

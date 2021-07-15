@@ -1,0 +1,64 @@
+@import 'default.css';
+.section_Title {
+  margin: 0 auto;
+  width: 50%;
+  margin: 2rem 0rem;
+  border-bottom: 2px solid #000;
+}
+.order_List_Section {
+  position: relative;
+  animation: show 0.3s linear;
+  margin: 4rem 2rem;
+}
+.tableWrapper {
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 6rem;
+}
+.tableWrapper table {
+  width: 100%;
+  font-size: 2rem;
+  border-spacing: 0px;
+}
+.tableWrapper table .table_Header {
+  background-color: #000;
+  color: #fff;
+  font-weight: 400;
+  padding: 1rem 3rem;
+  border: 0.5px solid #888888;
+  border-right: 0;
+}
+.tableWrapper table .table_Header:last-child {
+  border-right: 0.5px solid #888888;
+}
+.tableWrapper table .table_Data {
+  text-align: center;
+  padding: 0.5rem 2rem;
+  border: 0.5px solid #888888;
+  border-right: 0;
+}
+.tableWrapper table .table_Data:last-child {
+  border-right: 0.5px solid #888888;
+}
+.tableWrapper table .table_Data img {
+  display: block;
+  width: 5rem;
+  margin: 1rem auto;
+}
+.tableWrapper table .table_Data_Row:hover {
+  background-color: #dfdfdf;
+}
+.tableWrapper table .table_Data_Row .revise_Btn {
+  border: 0;
+  background-color: transparent;
+  color: #BD2D00;
+  cursor: pointer;
+  transition: 0.5s all;
+}
+.tableWrapper table .table_Data_Row .revise_Btn:hover {
+  color: #a32e2e;
+  text-decoration: underline;
+}
+tfoot {
+  margin-top: 2rem;
+}

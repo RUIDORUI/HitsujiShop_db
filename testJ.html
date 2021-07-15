@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: #eef;
+        }
+        
+        div {
+            width: 100px;
+            height: 100px;
+            padding: 20px;
+            background-color: #fff;
+        }
+    </style>
+    <script src='https://code.jquery.com/jquery-latest.js'></script>
+</head>
+
+<body>
+    <div id='log'></div>
+    <div class='tableWrapper'>
+        <h2 class='table_Title'>Cart List</h4>
+            <table class='Cart_Table'>
+                <thead>
+                    <tr class='table_Header_Row'>
+                        <th class='table_Header'>Item Name</th>
+                        <th class='table_Header'>Item Image</th>
+                        <th class='table_Header'>Size</th>
+                        <th class='table_Header'>Unit Price</th>
+                        <th class='table_Header'>Quantity</th>
+                        <th class='table_Header'>Total</th>
+                        <th class='table_Header'>Edit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class='table_Data_Row'>
+                        <td class='table_Data'>Petal T-shirts(White)</td>
+                        <td class='table_Data'><img src='/shopImg/Item1/item1_1.jpg' alt=''></td>
+                        <td class='table_Data'>S</td>
+                        <td class='table_Data'>$790</td>
+                        <td class='table_Data'>1</td>
+                        <td class='table_Data'>$790</td>
+                        <td class='table_Data'><button class='delete_Cart'>Delete</button></td>
+                    </tr>
+
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <td class='CheckSection' colspan='7'>
+                            <div class='total_Title'>Total: $790</div>
+
+                        </td>
+
+
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+
+                            <td>
+                                <button class='checkout_Button'>Check Out</button>
+                            </td>
+                        </tr>
+
+                </tfoot>
+            </table>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+@import 'default.css';
+@DefaultH1: 5rem;
+@DefaultH2: 4rem;
+@DefaultH3: 3rem;
+@DefaultH4: 2rem;
+@DefaultH5: 1.8rem;
+@color_Warning: #BD2D00;
+@color_Second: #707070;
+
+.section_Title {
+    margin: 0 auto;
+    width: 50%;
+    margin: 2rem 0rem;
+    border-bottom: 2px solid #000;
+
+}
+
+.order_List_Section {
+    position: relative;
+    animation: show .3s linear;
+    margin: 4rem 2rem;
+}
+
+.tableWrapper {
+    width: 100%;
+    margin: 0 auto;
+
+    padding-bottom: 6rem;
+
+
+    table {
+        width: 100%;
+        font-size: @DefaultH4;
+        border-spacing: 0px;
+
+        // margin: 0 auto;
+        .table_Header {
+            background-color: #000;
+            color: #fff;
+            font-weight: 400;
+            padding: 1rem 3rem;
+            border: .5px solid rgb(136, 136, 136);
+            border-right: 0;
+
+            &:last-child {
+                border-right: .5px solid rgb(136, 136, 136);
+            }
+        }
+
+        .table_Data {
+            text-align: center;
+            padding: .5rem 2rem;
+            border: .5px solid rgb(136, 136, 136);
+            border-right: 0;
+
+            &:last-child {
+                border-right: .5px solid rgb(136, 136, 136);
+            }
+
+            img {
+                display: block;
+                width: 5rem;
+                margin: 1rem auto;
+
+            }
+        }
+
+        .table_Data_Row {
+            &:hover {
+                background-color: rgb(223, 223, 223);
+            }
+
+            .revise_Btn {
+                border: 0;
+                background-color: transparent;
+                color: @color_Warning;
+                cursor: pointer;
+                transition: 0.5s all;
+
+                &:hover {
+                    color: rgb(163, 46, 46);
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+
+}
+
+tfoot {
+    margin-top: 2rem;
+}

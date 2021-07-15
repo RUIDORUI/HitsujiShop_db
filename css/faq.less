@@ -1,0 +1,72 @@
+@import "normalize.css";
+@DefaultH1: 5rem;
+@DefaultH2: 4rem;
+@DefaultH3: 3rem;
+@DefaultH4: 2rem;
+@DefaultH5: 1.8rem;
+@color_Warning: #BD2D00;
+@color_Second: #C4C4C4;
+
+.faq_Section {
+    position: relative;
+    animation: show .3s linear;
+    width: 90%;
+    padding: 4rem;
+    text-align: justify;
+    border: 1px solid #000;
+
+    margin-top: 4rem;
+
+    ul li,
+    li a {
+        font-size: 2rem;
+        color: @color_Warning;
+        margin-bottom: 2rem;
+        // transition: .5s all;
+
+        &:hover {
+            font-weight: 700;
+        }
+    }
+
+    h2 {
+        border-bottom: 2px solid #000;
+        width: 50%;
+    }
+
+
+
+    .help_descrip {
+        line-height: 2;
+        font-size: 1.6rem;
+    }
+}
+
+@media screen and(max-width:1280px) {
+    .faq_Section {
+        .section_Title {
+            width: 90%;
+        }
+    }
+
+}
+
+@media screen and(max-width:500px) {
+    .faq_Section {
+        h3 {
+            font-size: @DefaultH5;
+        }
+
+        ul li,
+        li a {
+            font-size: @DefaultH5;
+        }
+
+        text-align: left;
+
+        .section_Title {
+            width: 90%;
+            font-size: @DefaultH3;
+        }
+    }
+}

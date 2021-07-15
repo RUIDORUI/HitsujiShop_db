@@ -1,0 +1,49 @@
+@import "normalize.css";
+.faq_Section {
+  position: relative;
+  animation: show 0.3s linear;
+  width: 90%;
+  padding: 4rem;
+  text-align: justify;
+  border: 1px solid #000;
+  margin-top: 4rem;
+}
+.faq_Section ul li,
+.faq_Section li a {
+  font-size: 2rem;
+  color: #BD2D00;
+  margin-bottom: 2rem;
+}
+.faq_Section ul li:hover,
+.faq_Section li a:hover {
+  font-weight: 700;
+}
+.faq_Section h2 {
+  border-bottom: 2px solid #000;
+  width: 50%;
+}
+.faq_Section .help_descrip {
+  line-height: 2;
+  font-size: 1.6rem;
+}
+@media screen and (max-width: 1280px) {
+  .faq_Section .section_Title {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .faq_Section {
+    text-align: left;
+  }
+  .faq_Section h3 {
+    font-size: 1.8rem;
+  }
+  .faq_Section ul li,
+  .faq_Section li a {
+    font-size: 1.8rem;
+  }
+  .faq_Section .section_Title {
+    width: 90%;
+    font-size: 3rem;
+  }
+}

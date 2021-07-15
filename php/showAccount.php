@@ -11,7 +11,7 @@ if (isset($_SESSION['accountName'])) {
     echo ("
     <div class='accountInfor_Field'>
         <h1>Member Information</h1>
-        <ul class='.inputWrapper'>
+        <ul class='inputWrapper'>
             <li class='infor_Title'><span>Account Name：</span>
                 <span class='infor_Text'>{$row['name']} </span>
             </li>
@@ -30,13 +30,13 @@ if (isset($_SESSION['accountName'])) {
             <li class='infor_Title'><span>Address：</span>
                 <span class='infor_Text'>{$row['address']}</span>
             </li>
-           
+
             <div class='inforBtnWrapper'>
                 <button id='infor_Back' onclick='location.href=`http://hitsujishop_test.com:6080/hitsuji.html`'>Back</button>
                 <button id='infor_Revise' onclick='toRvisePage()'>Revise Information</button>
             </div>
 
         </ul>
-        
+
     </div>");
 }

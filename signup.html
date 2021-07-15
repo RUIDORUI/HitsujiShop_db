@@ -14,6 +14,16 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <title>signup</title>
     <script>
+        $(function() {
+            pageOut();
+            checkSignIn();
+            pwsVisible('#input_SignupPassword', '#toggle_Signup');
+            cartScroll();
+            show_Min_Cart();
+            cart_Total(0);
+
+        })
+
         function checkPassword() {
             console.log($('#input_SignupPassword').val());
             console.log($('#input_ConfirmPass').val());
@@ -132,7 +142,8 @@
                     dataType: 'html',
                     data: $('#signup_Form').serialize(),
                     success: function(data) {
-                        showSuccessWindow('Sign UP Successfully', 'http://hitsujishop_test.com:6080/hitsuji.html');
+                        showSuccessWindow('Sign UP Successfully', 'http://hitsujishop_test.com:6080/hitsuji%20copy.html');
+                        // location.href = 'http://hitsujishop_test.com:6080/hitsuji.html';
                         console.log(data);
                     },
                     error: function(xhr) {
@@ -147,23 +158,13 @@
 
             }
         }
-
-
-        $(function() {
-            pageOut();
-            checkSignIn();
-            // pwsVisible(document.getElementById('input_SignupPassword'), document.getElementById('toggle_Signup'));
-            pwsVisible('#input_SignupPassword', '#toggle_Signup');
-            // pwsVisible('#signIn_Password', '#toggle_Signin');
-
-        })
     </script>
 </head>
 
 <body>
 
     <div class="container">
-        <div class="banner_Wrapper">
+        <div class="banner_Wrapper" id="topAnchor">
             <div class="banner">
                 <h1 id="hitsuji">羊文學</h1>
                 <h1>Official shop</h1>
@@ -262,23 +263,35 @@
                 </div>
             </form>
         </div>
-
-
-
-        <div id="popo" class="footer">
+        <div class="footer">
             <div class="footer_Contact">
                 Contact：
                 <div class="iconWrapper">
-                    <i class="fas fa-home"></i>
+                    <a href="https://www.hitsujibungaku.info/" target="_blank"><i class="fas fa-home"></i></a>
                 </div>
                 <div class="iconWrapper">
-                    <i class="fab fa-twitter"></i>
+                    <a href="https://twitter.com/hitsujibungaku" target="_blank"><i class="fab fa-twitter"></i></a>
                 </div>
                 <div class="iconWrapper">
-                    <i class="fab fa-instagram"></i>
+                    <a href="https://www.instagram.com/hitsujibungaku/" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
             <div class="footer_Copy">Copyright © 2021 Hitsujibungaku.</div>
+        </div>
+
+
+        <div class="cartWrapper">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 900 900 " class="show_Cart">
+                <path
+                    d="M671.504 577.829L781.989 145.22H902.86v-68H729.174L703.128 179.2 0 178.697l74.753 399.129h596.751v.003zm14.262-330.641l-67.077 262.64h-487.49L81.928 246.756l603.838.432zM578.418 825.641c59.961 0 108.743-48.783 108.743-108.744s-48.782-108.742-108.743-108.742H168.717c-59.961 0-108.744 48.781-108.744 108.742s48.782 108.744 108.744 108.744S277.46 776.858 277.46 716.897c0-14.4-2.821-28.152-7.927-40.742h208.069c-5.107 12.59-7.928 26.342-7.928 40.742.001 59.961 48.783 108.744 108.744 108.744zM209.46 716.897c0 22.467-18.277 40.744-40.743 40.744s-40.744-18.277-40.744-40.744c0-22.465 18.277-40.742 40.744-40.742 22.466 0 40.743 18.277 40.743 40.742zm409.702 0c0 22.467-18.277 40.744-40.743 40.744s-40.743-18.277-40.743-40.744c0-22.465 18.277-40.742 40.743-40.742s40.743 18.277 40.743 40.742z" />
+            </svg>
+            <p class="show_Cart">Cart</p>
+            <p class="show_Cart" id='cart_Number'>0</p>
+            <div class="toTop">
+                <a href="#topAnchor">
+                    <svg xmlns="http://www.w3.org/2000/svg" width='90%' viewBox="0 0 367.85 367.85"><path d="M318.17 162.85l-128-160c-3.032-3.8-9.464-3.8-12.496 0l-128 160a8.012 8.012 0 00-.968 8.464 8.03 8.03 0 007.224 4.536h72v176c0 8.824 7.176 16 16 16h80c8.824 0 16-7.176 16-16v-176h72a7.99 7.99 0 007.208-4.536 7.981 7.981 0 00-.968-8.464zm-86.24-3c-4.416 0-8 3.584-8 8v184h-80v-184c0-4.416-3.584-8-8-8H72.578L183.93 20.658 295.282 159.85H231.93z"/></svg>
+                </a>
+            </div>
         </div>
 
         <!-- <div id="signIn_Section">

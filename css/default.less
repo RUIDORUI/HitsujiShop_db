@@ -7,6 +7,8 @@
 @color_Warning: #BD2D00;
 @color_Second: #C4C4C4;
 
+
+
 @keyframes show {
     0% {
         // transform: translateX(50%);
@@ -108,30 +110,15 @@ h5 {
         width: 100%;
         height: 40vh;
 
-        background: radial-gradient(circle, rgba(204, 204, 204, 0.356), rgba(255, 255, 255, 0)), no-repeat url(/shopImg/banner4.jpg) center, rgb(49, 49, 49);
-        background-size: 70%;
+        background: radial-gradient(circle, rgba(204, 204, 204, 0.356), rgba(255, 255, 255, 0)), no-repeat url(/shopImg/banner8.jpg) center, rgb(49, 49, 49);
+        background-size: 80%;
         background-attachment: scroll;
-        background-position: right 0 top 0%;
+        background-position: right 0 top 40%;
 
 
 
 
-        .banner {
-            color: #fff;
 
-            h1:first-child {
-                font-size: 8rem;
-                padding-top: 2rem;
-            }
-
-            h1 {
-
-                padding-left: 4rem;
-                margin: 0;
-            }
-
-
-        }
 
         .banner_Promote {
             position: absolute;
@@ -146,35 +133,11 @@ h5 {
             align-items: center;
             background: linear-gradient(90deg, rgb(49, 49, 49) 0%, rgba(226, 226, 226, 0.03405112044817926) 100%);
 
-            .promote_ImageWrapper {
-                width: 10rem;
-                height: 10rem;
-            }
-
-            .promote_Img {
-                display: block;
-                width: 100%;
-                padding-top: 100%;
-                background: center url(/shopImg/disco/al_01.jpg) no-repeat;
-                background-size: cover;
-                animation: zoom .5s ease;
-
-            }
 
 
 
-            .promote_TextWrapper {
-                height: 10rem;
-                display: flex;
-                align-items: flex-end;
 
-                .promote_Text {
-                    margin-left: 3rem;
-                    font-size: @DefaultH3;
-                    padding-bottom: 1rem;
-                }
 
-            }
 
 
         }
@@ -182,9 +145,57 @@ h5 {
         &:hover .promote_ImageWrapper {
             animation: zoom 1s ease;
         }
+
+        .promote_TextWrapper {
+            height: 10rem;
+            display: flex;
+            align-items: flex-end;
+
+            .promote_Text {
+                margin-left: 3rem;
+                font-size: @DefaultH3;
+                padding-bottom: 1rem;
+            }
+
+        }
+
+        .promote_ImageWrapper {
+            width: 10rem;
+            height: 10rem;
+        }
+
+        .promote_Img {
+            display: block;
+            width: 100%;
+            padding-top: 100%;
+            background: center url(/shopImg/disco/al_01.jpg) no-repeat;
+            background-size: cover;
+            animation: zoom .5s ease;
+
+        }
+    }
+
+    .banner {
+        color: #fff;
+
+        h1:first-child {
+            font-size: 8rem;
+            padding-top: 2rem;
+        }
+
+        h1 {
+
+            padding-left: 4rem;
+            margin: 0;
+        }
+
+
     }
 
     .navBar {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0px;
         margin-top: 5rem;
         padding: 1rem 0;
         border-top: 1px solid #000;
@@ -192,6 +203,8 @@ h5 {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        background-color: #fff;
+        z-index: 2;
 
         .logo a {
             display: flex;
@@ -319,183 +332,18 @@ h5 {
             // }
         }
 
-
-    }
-
-    #signIn_Section {
-
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        // display: flex;
-        // flex-direction: row;
-        // justify-content: center;
-        // align-items: center;
-
-        width: 100%;
-        // height: auto;
-        background-color: rgba(255, 255, 255, 0.5);
-
-        // display: none;
-        #signInForm_Wrapper {
-            position: absolute;
-            width: 30%;
-            // height: auto;
-            background-color: #fff;
-            border: 1px solid #000;
-            padding: 2rem;
-            margin: 0 auto;
-            margin-top: 50vh;
-            display: none;
-            overflow-y: scroll;
-            max-height: 100%;
-            left: 0;
-            right: 0;
-            // top: 50vh;
-            transform: translateY(-50%);
-
-            &::-webkit-scrollbar {
-                display: none;
-            }
+        a {
+            transition: .5s all;
         }
 
-        #signIn_Form {
-            // display: none;
-
-
-            h1,
-            h4 {
-                text-align: center;
-            }
-
-            h1 {
-                border-bottom: 1px solid #000;
-            }
-
-            h4 {
-                font-weight: 400;
-                width: 70%;
-                margin: 2rem auto;
-            }
-
-            .signInInput_Wrapper {
-                margin-top: 5rem;
-            }
-
-
-            .signInInput_Field {
-                width: 70%;
-                margin: 0 auto;
-                display: flex;
-                flex-direction: column;
-                justify-content: start;
-                align-items: flex-start;
-
-                h4 {
-                    width: 70%;
-                    margin-bottom: 1rem;
-                    text-align: left;
-                    font-weight: 700;
-                }
-
-                input {
-                    width: 70%;
-                    margin: 0 auto;
-                    font-size: @DefaultH5;
-                    height: 3rem;
-                }
-
-                i {
-                    position: relative;
-                    font-size: 2rem;
-                    padding: 0.5rem;
-                    align-self: flex-end;
-                    bottom: 3.5rem;
-                    right: 15%;
-                    cursor: pointer;
-
-                }
-
-            }
-
-            #signin_Submit {
-                display: block;
-                box-sizing: border-box;
-                font-size: @DefaultH4;
-                font-weight: 700;
-                background-color: #fff;
-                color: #000;
-                border: 3px solid #000;
-                width: 50%;
-                padding: .5rem 1rem;
-                cursor: pointer;
-                margin: 4rem auto;
-                transition: all .5s;
-
-                &:hover {
-                    background-color: #000;
-                    color: #fff;
-                }
-            }
-
-            #signIn_Forget {
-                width: 50%;
-                display: block;
-                margin: 0 auto;
-                padding-bottom: 2rem;
-                font-size: @DefaultH5;
-                font-weight: 700;
-                color: #868686;
-                text-align: center;
-                transition: all .5s;
-                border-bottom: 1px solid #000;
-
-                &:hover {
-                    color: #000;
-
-                }
-
-            }
-
-            .signIn_Create {
-                margin: 5rem auto;
-
-                color: #868686;
-
-                h4,
-                a {
-                    font-size: @DefaultH5;
-                }
-
-                a {
-                    color: #000;
-                }
-
-                #signIn_CreateLink {
-                    text-decoration: underline;
-                }
-            }
-
-
-        }
-
-        #signIn_Success {
-            width: 70%;
-            height: 100%;
-            margin: 0 auto;
-            border-top: 1px solid #000;
-            border-bottom: 2px solid #000;
-            padding: 2rem;
-
-            h1 {
-                text-align: center;
-            }
+        a:hover {
+            color: @color_Warning;
         }
 
 
     }
+
+
 
     .input_Error {
         margin: 0 auto;
@@ -506,14 +354,210 @@ h5 {
     }
 }
 
+#signIn_Section {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // display: flex;
+    // flex-direction: row;
+    // justify-content: center;
+    // align-items: center;
+    z-index: 10;
+    width: 100%;
+    // height: auto;
+    background-color: rgba(255, 255, 255, 0.5);
+
+    // display: none;
+    #signInForm_Wrapper {
+        position: absolute;
+        width: 30%;
+        // height: auto;
+        background-color: #fff;
+        border: 1px solid #000;
+        padding: 2rem;
+        margin: 0 auto;
+        margin-top: 50vh;
+        display: none;
+        overflow-y: scroll;
+        max-height: 100%;
+        left: 0;
+        right: 0;
+        // top: 50vh;
+        transform: translateY(-50%);
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    #signIn_Form {
+        // display: none;
+
+
+        h1,
+        h4 {
+            text-align: center;
+        }
+
+        h1 {
+            border-bottom: 1px solid #000;
+        }
+
+        h4 {
+            font-weight: 400;
+            width: 70%;
+            margin: 2rem auto;
+        }
+
+        .signInInput_Wrapper {
+            margin-top: 5rem;
+        }
+
+
+        .signInInput_Field {
+            width: 70%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: flex-start;
+
+            h4 {
+                width: 70%;
+                margin-bottom: 1rem;
+                text-align: left;
+                font-weight: 700;
+            }
+
+            input {
+                width: 70%;
+                margin: 0 auto;
+                font-size: @DefaultH5;
+                height: 3rem;
+            }
+
+            i {
+                position: relative;
+                font-size: 2rem;
+                padding: 0.5rem;
+                align-self: flex-end;
+                bottom: 3.5rem;
+                right: 15%;
+                cursor: pointer;
+
+            }
+
+        }
+
+        #signin_Submit {
+            display: block;
+            box-sizing: border-box;
+            font-size: @DefaultH4;
+            font-weight: 700;
+            background-color: #fff;
+            color: #000;
+            border: 3px solid #000;
+            width: 50%;
+            padding: .5rem 1rem;
+            cursor: pointer;
+            margin: 4rem auto;
+            transition: all .5s;
+
+            &:hover {
+                background-color: #000;
+                color: #fff;
+            }
+        }
+
+        #signIn_Forget {
+            width: 50%;
+            display: block;
+            margin: 0 auto;
+            padding-bottom: 2rem;
+            font-size: @DefaultH5;
+            font-weight: 700;
+            color: #868686;
+            text-align: center;
+            transition: all .5s;
+            border-bottom: 1px solid #000;
+
+            &:hover {
+                color: #000;
+
+            }
+
+        }
+
+        .signIn_Create {
+            margin: 5rem auto;
+
+            color: #868686;
+
+            h4,
+            a {
+                font-size: @DefaultH5;
+            }
+
+            a {
+                color: #000;
+            }
+
+            #signIn_CreateLink {
+                text-decoration: underline;
+            }
+        }
+
+
+    }
+
+    #signIn_Success {
+        width: 70%;
+        height: 100%;
+        margin: 0 auto;
+        border-top: 1px solid #000;
+        border-bottom: 2px solid #000;
+        padding: 2rem;
+
+        h1 {
+            text-align: center;
+        }
+    }
+
+
+}
+
+
+
 .cartWrapper {
     position: fixed;
     left: 87.5%;
-    top: 80vh;
+    top: 75vh;
     width: 6rem;
     box-sizing: border-box;
-    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.6);
     color: #fff;
+    cursor: pointer;
+    transition: .5s all;
+
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.6);
+        color: #000;
+        cursor: pointer;
+        border: 2px solid #000;
+
+        svg {
+            fill: #000;
+        }
+
+        p:nth-child(2) {
+
+            border-bottom: 2px solid #000;
+        }
+    }
 
 
     svg {
@@ -544,6 +588,44 @@ h5 {
         padding-bottom: .5rem 0;
         line-height: 30px;
     }
+
+    .toTop {
+        // padding-top: 1rem;
+        // background-color: rgba(0, 0, 0, 0.6);
+        border-top: 5px solid #fff;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.6);
+            color: rgb(255, 255, 255);
+            cursor: pointer;
+            border: 2px solid #000;
+
+            svg {
+                fill: rgba(0, 0, 0, 0.6);
+            }
+
+
+        }
+
+
+        // svg {
+        //     box-sizing: border-box;
+        //     padding: 1.2rem;
+        //     fill: rgb(255, 255, 255);
+        //     margin: 0 auto;
+        //     text-align: center;
+        //     transform: translateX(7%);
+
+        //     &:hover {
+        //         fill: rgb(0, 0, 0);
+        //     }
+        // }
+
+        a {
+            display: block;
+            margin: 0 auto;
+        }
+    }
 }
 
 .cart_Animate {
@@ -552,9 +634,283 @@ h5 {
 
 .button_Disable {
     pointer-events: none !important;
-    background-color: @color_Second !important;
+    background-color: @color_Second  !important;
     color: #fff !important;
 
 
 
+}
+
+
+.tableWrapper {
+    width: 90%;
+    margin: 0 auto;
+    overflow-x: scroll;
+    padding-bottom: 6rem;
+
+
+    table {
+        width: 100%;
+        font-size: @DefaultH4;
+        border-spacing: 0px;
+
+        // margin: 0 auto;
+        .table_Header {
+            background-color: #000;
+            color: #fff;
+            font-weight: 400;
+            padding: 1rem 3rem;
+            border: .5px solid rgb(48, 48, 48);
+            border-right: 0;
+
+            &:last-child {
+                border-right: .5px solid rgb(48, 48, 48);
+            }
+        }
+
+        .table_Data {
+            text-align: center;
+            padding: .5rem 2rem;
+            border: .5px solid rgb(48, 48, 48);
+            border-right: 0;
+
+            &:last-child {
+                border-right: .5px solid rgb(48, 48, 48);
+            }
+
+            img {
+                display: block;
+                width: 5rem;
+                margin: 1rem auto;
+
+            }
+        }
+
+        .table_Data_Row {
+            &:hover {
+                background-color: rgb(245, 245, 245);
+            }
+
+            .delete_Cart {
+                border: 0;
+                background-color: transparent;
+                color: @color_Warning;
+                cursor: pointer;
+                transition: 0.5s all;
+
+                &:hover {
+                    color: rgb(163, 46, 46);
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+
+}
+
+tfoot {
+    margin-top: 2rem;
+}
+
+.checkoutSection {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+
+
+.checkout_Button {
+    display: block;
+
+    width: 100%;
+    padding: 1rem;
+    font-size: @DefaultH4;
+    text-align: center;
+    cursor: pointer;
+    background-color: #000;
+    border: 0;
+    color: #fff;
+    transition: .5s all;
+
+    &:hover {
+        border: 1px solid #000;
+        background-color: #fff;
+        color: #000;
+    }
+
+
+}
+
+.total_Title {
+    padding: 2rem;
+    font-size: @DefaultH3;
+    text-align: right;
+    border-top: 5px solid #000;
+
+}
+
+@media screen and(max-width:1080px) {
+    .container {
+        margin: 0 auto;
+        width: 90%;
+
+        .banner {
+            color: #fff;
+
+            h1:first-child {
+                font-size: 6rem;
+                padding-top: 2rem;
+            }
+
+            h1 {
+
+                padding-left: 4rem;
+                margin: 0;
+            }
+
+
+        }
+
+        .banner_Wrapper {
+            .promote_ImageWrapper {
+                width: 14rem;
+            }
+        }
+
+
+        .navBar {
+            flex-direction: column;
+            align-items: flex-start;
+
+
+            .logo {
+                margin-bottom: 4rem;
+                // border-bottom: 1px solid #000;
+            }
+
+            .nav_Menu {
+                width: 100%;
+
+
+                a {
+                    display: inline-block;
+                    text-align: center;
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+
+        #signIn_Section {
+            #signInForm_Wrapper {
+                width: 60%;
+            }
+        }
+
+
+    }
+}
+
+@media screen and(max-width:500px) {
+    .container {
+        margin: 0 auto;
+        width: 100%;
+
+
+        .banner_Promote {
+            bottom: -50px;
+
+            .promote_TextWrapper {
+                height: 10rem;
+
+
+                .promote_Text {
+
+                    font-size: 2rem;
+
+                }
+
+            }
+        }
+
+        .banner_Wrapper {
+            background-size: 130%;
+
+            .promote_ImageWrapper {
+                width: 20rem;
+            }
+        }
+
+        .logo {
+            margin-bottom: 4rem;
+            // border-bottom: 1px solid #000;
+        }
+
+        .navBar {
+            position: static;
+
+            .nav_Menu {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                align-items: center;
+
+                a {
+                    display: inline-block;
+                    width: 80%;
+                    text-align: center;
+                    border-right: 0px;
+                    border-bottom: 2px solid #000;
+
+                    // margin-bottom: 2rem;
+                }
+            }
+        }
+
+        .footer {
+            font-size: @DefaultH4;
+
+
+
+            .iconWrapper {
+                font-size: @DefaultH3;
+            }
+        }
+
+        #signIn_Section {
+            #signInForm_Wrapper {
+                width: 80%;
+            }
+
+            #signIn_Form {
+                h1 {
+                    font-size: @DefaultH2;
+                }
+
+                .signInInput_Wrapper {
+
+                    margin-top: 3rem;
+                }
+
+                .signInInput_Field {
+                    width: 90%;
+                }
+
+                #signin_Submit {
+                    margin: 2rem auto;
+                    width: 70%;
+                    // padding: 1rem;
+                }
+            }
+        }
+
+    }
+}
+
+@media screen and(max-width:400px) {
+    .cartWrapper {
+        left: 80%;
+    }
 }

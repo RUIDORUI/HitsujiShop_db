@@ -5,28 +5,41 @@
   margin-top: 2rem;
   animation: show 0.3s linear;
 }
-.signup_Section .signup_Form {
+.signup_Form {
   width: 72.86245353%;
   margin: 0 auto;
   border: 1px solid #000;
   text-align: center;
 }
-.signup_Section .signup_Form h1 {
+.signup_Form h1 {
   margin: 2rem;
   border-bottom: 2px solid #000;
 }
-.signup_Section .signup_Form .signup_Field {
+.signup_Form .input_Error {
+  display: none;
+  font-size: 1.8rem;
+  color: #ee0a21;
+}
+.signup_Form i {
+  position: relative;
+  font-size: 2rem;
+  padding: 0.5rem;
+  align-self: flex-end;
+  bottom: 3.5rem;
+  cursor: pointer;
+}
+.signup_Field {
   box-sizing: border-box;
   width: 80%;
   margin: 0 auto;
   padding: 2rem;
 }
-.signup_Section .signup_Form .signup_Field h4 {
+.signup_Field h4 {
   text-align: left;
   margin: 1rem 0;
   width: 100%;
 }
-.signup_Section .signup_Form .signup_Field .inputWrapper {
+.signup_Field .inputWrapper {
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -35,7 +48,7 @@
   margin: 3rem auto;
   width: 60%;
 }
-.signup_Section .signup_Form .signup_Field .signup_Input {
+.signup_Field .signup_Input {
   font-size: 1.8rem;
   position: relative;
   text-align: left;
@@ -43,16 +56,16 @@
   margin-left: 0;
   width: 100%;
 }
-.signup_Section .signup_Form .signup_Field .checkboxWrapper {
+.signup_Field .checkboxWrapper {
   font-size: 2rem;
 }
-.signup_Section .signup_Form .signup_Field .checkboxWrapper input#input_Male {
+.signup_Field .checkboxWrapper input#input_Male {
   margin-right: 2rem;
 }
-.signup_Section .signup_Form .signup_Field .checkboxWrapper input:first-child {
+.signup_Field .checkboxWrapper input:first-child {
   margin-right: 2rem;
 }
-.signup_Section .signup_Form .signup_Field #signup_Submit {
+.signup_Field #signup_Submit {
   font-size: 2rem;
   font-weight: 700;
   background-color: #fff;
@@ -63,20 +76,26 @@
   margin-bottom: 5rem;
   transition: all 0.5s;
 }
-.signup_Section .signup_Form .signup_Field #signup_Submit:hover {
+.signup_Field #signup_Submit:hover {
   background-color: #000;
   color: #fff;
 }
-.signup_Section .signup_Form .input_Error {
-  display: none;
-  font-size: 1.8rem;
-  color: #ee0a21;
+@media screen and (max-width: 1080px) {
+  .signup_Field .inputWrapper {
+    width: 75%;
+  }
 }
-.signup_Section .signup_Form i {
-  position: relative;
-  font-size: 2rem;
-  padding: 0.5rem;
-  align-self: flex-end;
-  bottom: 3.5rem;
-  cursor: pointer;
+@media screen and (max-width: 500px) {
+  .signup_Form {
+    width: 100%;
+  }
+  .signup_Form h1 {
+    font-size: 4rem;
+  }
+  .signup_Field {
+    padding: 2rem 0;
+  }
+  .signup_Field .inputWrapper {
+    width: 90%;
+  }
 }

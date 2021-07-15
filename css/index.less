@@ -30,93 +30,96 @@
 
         // background-color: rgb(138, 78, 78);
 
-        .goods_Box {
+    }
 
-            font-size: @DefaultH4;
-            margin: 2rem;
-            // background-color: rgb(56, 180, 87);
+    .goods_Box {
 
-            .goods_Img {
-                width: 100%;
-                padding-top: 120%;
-                background: center url(/shopImg/Item1/Item1_1.jpg) no-repeat;
-                background-size: cover;
-                transition: all .5s;
+        font-size: @DefaultH4;
+        margin: 2rem;
+        // background-color: rgb(56, 180, 87);
 
-                &:hover {
-                    filter: brightness(.8);
-                }
+        .goods_Img {
+            width: 100%;
+            padding-top: 120%;
+            background: center url(/shopImg/Item1/Item1_1.jpg) no-repeat;
+            background-size: cover;
+            transition: all .5s;
+
+            &:hover {
+                filter: brightness(.8);
+            }
+        }
+
+        .goods_Title {
+            margin-top: 2rem;
+        }
+
+
+    }
+
+    .goods_Button {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        margin-top: 2rem;
+        border-bottom: 1px solid #000;
+
+        button {
+            // padding: 0;
+            // border: 0;
+            background-color: #fff;
+        }
+
+        .goods_ButtonL {
+            height: @DefaultH4 + 2rem;
+            line-height: @DefaultH4 + 1rem;
+            width: 40%;
+            // flex: 2;
+            padding-right: 1rem;
+            padding-left: 1rem;
+            border: 1px solid #000;
+            border-bottom: 0;
+            border-right: 0;
+            transition: all .5s;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #000;
+                color: #fff;
+
+            }
+        }
+
+        .goods_ButtonR {
+            height: @DefaultH4 + 2rem;
+            // padding-right: 1rem;
+            width: 30%;
+            border: 1px solid #000;
+            border-bottom: 0;
+            // flex: 1;
+            transition: all .5s;
+            // padding: 1rem;
+            cursor: pointer;
+
+
+
+            svg {
+                // padding: .5rem;
+                height: @DefaultH4 + 2rem;
+                width: 40%;
+
             }
 
-            .goods_Title {
-                margin-top: 2rem;
-            }
+            &:hover {
+                background-color: rgb(73, 72, 72);
 
-            .goods_Button {
-                display: flex;
-                justify-content: flex-end;
-                align-items: center;
-                width: 100%;
-                margin-top: 2rem;
-                border-bottom: 1px solid #000;
 
-                button {
-                    // padding: 0;
-                    // border: 0;
-                    background-color: #fff;
+
+                svg {
+                    fill: #fff;
                 }
 
-                .goods_ButtonL {
-                    height: @DefaultH4 + 2rem;
-                    line-height: @DefaultH4 + 1rem;
-                    width: 40%;
-                    // flex: 2;
-                    padding-right: 1rem;
-                    padding-left: 1rem;
-                    border: 1px solid #000;
-                    border-bottom: 0;
-                    border-right: 0;
-                    transition: all .5s;
-                    cursor: pointer;
-
-                    &:hover {
-                        background-color: #000;
-                        color: #fff;
-
-                    }
-                }
-
-                .goods_ButtonR {
-                    height: @DefaultH4 + 2rem;
-                    // padding-right: 1rem;
-                    width: 30%;
-                    border: 1px solid #000;
-                    border-bottom: 0;
-                    // flex: 1;
-                    transition: all .5s;
-                    // padding: 1rem;
-                    cursor: pointer;
-
-
-
-                    svg {
-                        // padding: .5rem;
-                        height: @DefaultH4 + 2rem;
-                        width: 40%;
-
-                    }
-
-                    &:hover {
-                        background-color: #000;
-
-
-
-                        svg {
-                            fill: #fff;
-                        }
-
-                    }
-                }
             }
         }
     }
@@ -124,4 +127,57 @@
 
 
 
+}
+
+@media screen and(max-width:1080px) {
+    .container {
+        .goods_Wrapper {
+            width: 50%;
+        }
+
+        .goods_Button {
+            .goods_ButtonR {
+                width: 40%;
+                height: 5rem;
+            }
+
+            .goods_ButtonL {
+                width: 60%;
+                height: 5rem;
+            }
+        }
+
+        .goods_Box {
+            font-size: @DefaultH4;
+
+        }
+    }
+}
+
+@media screen and(max-width:500px) {
+
+    .container {
+        .goods_Wrapper {
+            width: 100%;
+        }
+
+        .goods_Button {
+            .goods_ButtonR {
+                width: 40%;
+                height: 5rem;
+            }
+
+            .goods_ButtonL {
+                width: 60%;
+                height: 5rem;
+            }
+        }
+
+        .goods_Box {
+            font-size: @DefaultH3;
+
+        }
+
+
+    }
 }

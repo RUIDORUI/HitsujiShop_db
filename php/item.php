@@ -87,10 +87,10 @@ if ($num !== 0) {
                     </div>
                     <div class='item_Price'>
                         <div class='informR_Title'>Price</div>
-                        <div class='priceNumber'>\$$price</div>
+                        <div class='priceNumber'>NT：\$$price</div>
                     </div>
                     <div class='item_Checkout'>
-                        <button id='checkOut_Btn' type='submit' formaction=''>Checkout</button>
+                        <button id='checkOut_Btn' type='submit' formaction='javascript:add_And_Check()' data-cartid = '{$id}'>Checkout</button>
                         <button id='addCart_Btn' type='submit' formaction='javascript:addCart()' data-cartid = '{$id}'>Add Cart</button>
                     </div>
                     </form>

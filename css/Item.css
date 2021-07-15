@@ -39,38 +39,38 @@
 .itemWrapper .itemImg .img_Row .img_BottomWrapper .img_Bottom:hover {
   filter: brightness(0.8);
 }
-.itemWrapper .itemInform {
+.itemInform {
   width: 50%;
 }
-.itemWrapper .itemInform .item_Title {
+.itemInform .item_Title {
   width: 100%;
   font-size: 4rem;
   border-bottom: 1px solid #000;
 }
-.itemWrapper .itemInform .item_IntroText {
+.itemInform .item_IntroText {
   margin-top: 3rem;
   font-size: 2rem;
   line-height: 2;
 }
-.itemWrapper .itemInform .itemInform_Bottom {
+.itemInform_Bottom {
   display: flex;
   margin-top: 5rem;
 }
-.itemWrapper .itemInform .itemInform_Bottom .informL {
+.itemInform_Bottom .informL {
   font-size: 1.4rem;
   line-height: 1.5;
   width: 40%;
 }
-.itemWrapper .itemInform .itemInform_Bottom .informL ul {
+.itemInform_Bottom .informL ul {
   margin: 0;
   padding: 0;
   padding-right: 2rem;
 }
-.itemWrapper .itemInform .itemInform_Bottom .informL ul li {
+.itemInform_Bottom .informL ul li {
   color: #C4C4C4;
   margin-bottom: 1rem;
 }
-.itemWrapper .itemInform .itemInform_Bottom .informL a {
+.itemInform_Bottom .informL a {
   background-color: #C4C4C4;
   color: #ffffff;
   display: inline-block;
@@ -82,32 +82,32 @@
   text-align: center;
   transition: all 0.5s;
 }
-.itemWrapper .itemInform .itemInform_Bottom .informL a:hover {
+.itemInform_Bottom .informL a:hover {
   background-color: #747474;
   color: #fff;
 }
-.itemWrapper .itemInform .itemInform_Bottom .informR {
+.itemInform_Bottom .informR {
   width: 60%;
   font-size: 3rem;
 }
-.itemWrapper .itemInform .itemInform_Bottom .informR .informR_Title {
+.itemInform_Bottom .informR .informR_Title {
   font-weight: 700;
   width: 80%;
   border-bottom: 1px solid #000;
   margin-bottom: 2rem;
 }
-.itemWrapper .itemInform .itemInform_Bottom .informR .item_Size label {
+.itemInform_Bottom .informR .item_Size label {
   margin-right: 1rem;
 }
-.itemWrapper .itemInform .itemInform_Bottom .informR .priceNumber {
+.itemInform_Bottom .informR .priceNumber {
   font-size: 4rem;
 }
-.itemWrapper .itemInform .itemInform_Bottom .informR .item_Checkout {
+.itemInform_Bottom .informR .item_Checkout {
   padding: 2rem 3rem;
   display: flex;
   justify-content: flex-end;
 }
-.itemWrapper .itemInform .itemInform_Bottom .informR .item_Checkout button {
+.itemInform_Bottom .informR .item_Checkout button {
   background-color: #fff;
   display: inline-block;
   margin-top: 2rem;
@@ -119,16 +119,52 @@
   cursor: pointer;
   transition: all 0.5s;
 }
-.itemWrapper .itemInform .itemInform_Bottom .informR .item_Checkout button:nth-child(2) {
+.itemInform_Bottom .informR .item_Checkout button:nth-child(2) {
   background-color: #575757;
   color: #fff;
 }
-.itemWrapper .itemInform .itemInform_Bottom .informR .item_Checkout button:hover {
+.itemInform_Bottom .informR .item_Checkout button:hover {
   background-color: #000;
   color: #fff;
 }
-.itemWrapper .itemInform .itemInform_Bottom .informR .item_Number,
-.itemWrapper .itemInform .itemInform_Bottom .informR .item_Price,
-.itemWrapper .itemInform .itemInform_Bottom .informR .item_Checkout {
+.itemInform_Bottom .informR .item_Number,
+.itemInform_Bottom .informR .item_Price,
+.itemInform_Bottom .informR .item_Checkout {
   margin-top: 5rem;
+}
+@media screen and (max-width: 1280px) {
+  .itemInform_Bottom .informR {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 900px) {
+  .itemWrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .itemWrapper .itemImg,
+  .itemWrapper .itemInform {
+    width: 80%;
+  }
+  .itemWrapper .itemInform {
+    order: -1;
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .itemInform_Bottom {
+    flex-direction: column;
+    align-items: center;
+  }
+  .itemInform_Bottom .informL,
+  .itemInform_Bottom .informR {
+    width: 80%;
+  }
+  .itemInform_Bottom .informR {
+    order: -1;
+  }
+  .itemInform_Bottom .informR .item_Checkout {
+    padding: 0;
+    margin-bottom: 2rem;
+  }
 }

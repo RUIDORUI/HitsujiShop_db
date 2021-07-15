@@ -5,7 +5,7 @@
 @DefaultH4: 2rem;
 @DefaultH5: 1.8rem;
 @color_Warning: #BD2D00;
-@color_Second: #C4C4C4;
+@color_Second: #707070;
 
 .section_Title {
     margin: 0 auto;
@@ -91,7 +91,7 @@ table {
     position: relative;
     animation: show .3s linear;
     margin: 4rem;
-    border-bottom: 4px double #000;
+    // border-bottom: 4px double #000;
 
 
     .tableWrapper {
@@ -100,8 +100,10 @@ table {
 
         padding-bottom: 6rem;
 
+        overflow-x: scroll;
 
         table {
+            width: 100%;
             font-size: @DefaultH4;
             border-spacing: 0px;
 
@@ -131,7 +133,7 @@ table {
 
                 img {
                     display: block;
-                    width: 10rem;
+                    width: 5rem;
                     margin: 1rem auto;
 
                 }
@@ -145,7 +147,7 @@ table {
                 .delete_Cart {
                     border: 0;
                     background-color: transparent;
-                    color: #ee0a21;
+                    color: @color_Warning;
                     cursor: pointer;
                     transition: 0.5s all;
 
@@ -197,7 +199,8 @@ table {
     position: relative;
     animation: show .3s linear;
     margin: 10rem 4rem;
-    border-bottom: 4px double #000;
+    // border-bottom: 4px double #000;
+    display: none;
 
     .checkout_Item_ListWrapper {
         width: 80%;
@@ -336,7 +339,8 @@ table {
     position: relative;
     animation: show .3s linear;
     margin: 10rem 6rem;
-    border-bottom: 4px double #000;
+
+    display: none;
 
     .checkout_Item_ListWrapper {
         width: 80%;
@@ -419,4 +423,53 @@ table {
     }
 
 
+}
+
+@media screen and(max-width:1080px) {
+    .sender_Information {
+        .sender_InputField {
+            .inputWrapper {
+                margin: 0;
+
+                .submitWrapper {
+                    justify-content: start;
+                }
+            }
+
+            .input_Half {
+                width: 100%;
+            }
+
+            .checkboxWrapper {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                width: 100%;
+
+
+                label {
+                    display: block;
+
+                    &:first-child {
+                        margin-bottom: 2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width:1080px) {
+
+    .confirm_Order_Section,
+    .checkout_Section {
+        margin: 10rem 0;
+    }
+
+    .confirm_Order_Section {
+        .confirm_OrderWrapper {
+            width: 100%;
+        }
+    }
 }

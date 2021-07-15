@@ -44,7 +44,7 @@
   width: 40%;
 }
 .accountInfor_Field li span:nth-child(2) {
-  width: 50%;
+  width: 30%;
 }
 .accountInfor_Field li p {
   padding-left: 5rem;
@@ -80,6 +80,7 @@
   color: #fff;
 }
 .accountInfor_Field button:nth-child(1) {
+  width: 30%;
   margin-left: 0;
   border: 0;
   background-color: #7a7a7a;
@@ -178,4 +179,37 @@
   align-self: flex-end;
   bottom: 3.5rem;
   cursor: pointer;
+}
+@media screen and (max-width: 1080px) {
+  .accountInfor_Field {
+    width: 80%;
+  }
+  .accountInfor_Field ul {
+    padding-left: 5rem;
+  }
+}
+@media screen and (max-width: 800px) {
+  .accountInfor_Field {
+    width: 100%;
+  }
+  .accountInfor_Field ul {
+    padding-left: 2rem;
+  }
+  .accountInfor_Field li span:nth-child(1) {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .accountInfor_Field {
+    width: 100%;
+  }
+  .accountInfor_Field .inforBtnWrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .accountInfor_Field .inforBtnWrapper button {
+    margin: 3rem;
+    width: 80%;
+  }
 }
