@@ -275,19 +275,28 @@
 @media screen and(max-width:600px) {
     .accountInfor_Field {
         width: 100%;
+        overflow-x: scroll;
+
+        h1 {
+            font-size: @DefaultH2;
+        }
 
         .inforBtnWrapper {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            ;
+
 
             button {
-                margin: 3rem;
+                margin: 2rem 3rem;
                 width: 80%;
 
                 &:nth-child(1) {}
             }
+        }
+
+        li {
+            font-size: @DefaultH4;
         }
     }
 }

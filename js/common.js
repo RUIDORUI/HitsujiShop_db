@@ -6,6 +6,8 @@ function pageOut() {
 
 }
 
+
+
 function pwsVisible(i, t) {
     const togglePassword = document.querySelector(t);
     const inputPassword = document.querySelector(i);
@@ -20,7 +22,7 @@ function pwsVisible(i, t) {
     });
 }
 
-function checkSignIn() {
+function checkSignIn(item) {
     $.ajax({
         type: 'POST',
         url: 'http://hitsujishop_test.com:6080/php/checkSignIn.php',
@@ -35,6 +37,7 @@ function checkSignIn() {
                     <a href='http://hitsujishop_test.com:6080/faq.html' class='navMenu_Link' id='faq_Link'>FAQ</a>
                     <a href='###' class='navMenu_Link' id='logout_Link' onclick='logOut()'>Log out</a>
                 </div>`);
+                selected_Color(item);
             } else if (data == 'administrator') {
                 $('.logo').after(` 
                 <div class='nav_Menu'>
@@ -44,6 +47,7 @@ function checkSignIn() {
                     <a href='http://hitsujishop_test.com:6080/faq.html' class='navMenu_Link' id='faq_Link'>FAQ</a>
                     <a href='###' class='navMenu_Link' id='logout_Link' onclick='logOut()'>Log out</a>
                 </div>`);
+                selected_Color(item);
             } else {
                 $('.logo').after(` 
                 <div class='nav_Menu'>
@@ -51,6 +55,7 @@ function checkSignIn() {
                     <a href='###'' class='navMenu_Link' id='signup_Link' onclick='showSignIn()'>SignIn/Up</a>
                     <a href='http://hitsujishop_test.com:6080/faq.html' class='navMenu_Link' id='faq_Link'>FAQ</a>
                 </div>`);
+                selected_Color(item);
             }
             console.log(data);
         },
@@ -59,6 +64,8 @@ function checkSignIn() {
         }
 
     })
+
+
 }
 
 function signIn() {
@@ -181,12 +188,17 @@ function logOut() {
         url: 'http://hitsujishop_test.com:6080/php/sign.php?do=logOut',
         success: function(data) {
             console.log(data);
-            window.location.href = 'http://hitsujishop_test.com:6080/hitsuji.html';
+            window.location.href = 'http://hitsujishop_test.com:6080/hitsuji%20copy.html';
         },
         error: function(xhr) {
             alert(xhr);
         }
     })
+}
+
+function selected_Color(item) {
+    $(`${item}`).addClass('selected');
+    console.log('selected');
 }
 
 function showSuccessWindow(text, href) {

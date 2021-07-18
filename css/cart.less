@@ -422,7 +422,31 @@ table {
 
     }
 
+    .backOrder_Btn {
+        background-color: rgb(160, 160, 160);
+        color: #ffffff;
+        display: inline-block;
+        margin-top: 2rem;
+        padding: 1.5rem;
+        width: 30%;
+        font-size: @DefaultH4;
+        border: 1px solid @color_Second;
+        text-align: center;
 
+        transition: all .5s;
+
+        &:hover {
+            background-color: #747474;
+
+
+            color: #fff;
+
+
+
+
+        }
+
+    }
 }
 
 @media screen and(max-width:1080px) {
@@ -460,7 +484,7 @@ table {
     }
 }
 
-@media screen and(max-width:1080px) {
+@media screen and(max-width:500px) {
 
     .confirm_Order_Section,
     .checkout_Section {
@@ -471,5 +495,9 @@ table {
         .confirm_OrderWrapper {
             width: 100%;
         }
+    }
+
+    .section_Title {
+        width: 80%;
     }
 }

@@ -502,6 +502,7 @@ switch ($_GET['do']) {
                                         <span><div class='sender_Infor_Title'>Payment：</div>{$payment}</span>
                                         <span><div class='sender_Infor_Title'>Date：</div>{$time[1]}/{$time[2]}/{$time[0]}</span>
                                     </div>
+                                    <a href='http://hitsujishop_test.com:6080/order_List.html' class='backOrder_Btn'>Back to Order</a>
                                 </div>
                             </div>";
                 // echo 'inserted';

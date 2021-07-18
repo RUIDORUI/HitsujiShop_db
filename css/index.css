@@ -91,7 +91,7 @@
 }
 @media screen and (max-width: 500px) {
   .container .goods_Wrapper {
-    width: 100%;
+    width: 80%;
   }
   .container .goods_Button .goods_ButtonR {
     width: 40%;

@@ -202,6 +202,10 @@
 @media screen and (max-width: 600px) {
   .accountInfor_Field {
     width: 100%;
+    overflow-x: scroll;
+  }
+  .accountInfor_Field h1 {
+    font-size: 4rem;
   }
   .accountInfor_Field .inforBtnWrapper {
     flex-direction: column;
@@ -209,7 +213,10 @@
     align-items: center;
   }
   .accountInfor_Field .inforBtnWrapper button {
-    margin: 3rem;
+    margin: 2rem 3rem;
     width: 80%;
+  }
+  .accountInfor_Field li {
+    font-size: 2rem;
   }
 }
